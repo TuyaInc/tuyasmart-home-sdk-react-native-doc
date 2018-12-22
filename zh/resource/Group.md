@@ -49,7 +49,7 @@ TuyaGroupApi.createGroup({
 ##### 【方法调用】
 
 ```js
-queryDeviceListToAddGroup({
+TuyaGroupApi.queryDeviceListToAddGroup({
 	homeId:, --Number
 	productId:'',  ---string
 })
@@ -82,26 +82,19 @@ TuyaGroupApi.queryDeviceListToAddGroup({
 
 ##### 【方法调用】
 
-```java
+```js
 * 群组修改名称
 * @param groupId    群组id
 * @param callback 回调
-mITuyaGroup.updateGroupName(IControlCallback callback)
+updateGroupName({groupID:, //Number
+name:''})
 ```
 
 ##### 【代码范例】
 
-```java
+```js
 //群组重命名
-mITuyaGroup.updateGroupName(new IControlCallback() {
-    @Override
-    public void onSuccess() {
-    }
-
-    @Override
-    public void onError(String s, String s1) {
-    }
-});
+TuyaGroupApi.updateGroupName({groupID:123123,name:'hah'})
 ```
 
 
@@ -113,7 +106,7 @@ mITuyaGroup.updateGroupName(new IControlCallback() {
 
 ##### 【方法调用】
 
-```java
+```js
 * 解散群组
 * @param groupId    群组id
 * @param callback 回调
@@ -127,7 +120,7 @@ TuyaGroupApi.dismissGroup({
 ```js
 //删除群组
 TuyaGroupApi.dismissGroup({
-	groupId:'',
+	groupId:123456,
 }).then(data=>{}).catch(e=>{})
 ```
 
@@ -154,7 +147,7 @@ TuyaGatewayApi.unregisterGroupListener({
 
 ##### 【代码范例】
 
-```java
+```js
 //注册群组回调事件
 TuyaGroupApi.registerGroupListener({
    groupId:'',
@@ -178,7 +171,7 @@ TuyaGatewayApi.unregisterGroupListener({
 
 ##### 【方法调用】
 
-```java
+```js
 * 发送群组控制命令
 * @param command 控制命令
 * @param listener 回调
@@ -195,7 +188,7 @@ TuyaGroupApi.publishDps({
 //command 参考设备篇
 TuyaGroupApi.publishDps({
 	groupId:'',
-	command:{}
+	command:'{'1':true}'
 }).then(data=>{}).catch(e=>{})
 
 ```
