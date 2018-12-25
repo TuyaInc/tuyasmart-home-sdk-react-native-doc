@@ -591,33 +591,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.17" data-path="FAQ.html">
-            
-                <a href="FAQ.html">
-            
-                    
-                    常见问题
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.18" data-path="Update_Log.html">
-            
-                <a href="Update_Log.html">
-            
-                    
-                    更新日志
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.19" data-path="constant.html">
+        <li class="chapter " data-level="1.17" data-path="constant.html">
             
                 <a href="constant.html">
             
@@ -677,50 +651,41 @@
                                 
                                 <h3 id="&#x5BB6;&#x5EAD;&#x7BA1;&#x7406;&#x7C7B;">&#x5BB6;&#x5EAD;&#x7BA1;&#x7406;&#x7C7B;</h3>
 <h3 id="&#x8C03;&#x7528;api">&#x8C03;&#x7528;API</h3>
-<p>import TuyaHomeManagerApi from &apos;./api/TuyaHomeManagerApi&apos;</p>
+<h4 id="import-tuyahomemanagerapi-from-apituyahomemanagerapi"><code>import TuyaHomeManagerApi from &apos;./api/TuyaHomeManagerApi&apos;</code></h4>
 <p>TuyaHomeManagerApi &#x63D0;&#x4F9B;&#x4E86;&#x521B;&#x5EFA;&#x5BB6;&#x5EAD;&#x3001;&#x83B7;&#x53D6;&#x5BB6;&#x5EAD;&#x5217;&#x8868;&#x4EE5;&#x53CA;&#x76D1;&#x542C;&#x5BB6;&#x5EAD;&#x76F8;&#x5173;&#x7684;&#x53D8;&#x66F4;</p>
-<pre><code>const HomeManagerNativeApi = require(&apos;react-native&apos;).NativeModules
-  .TuyaHomeManagerModule
-
-  const TuyaHomeManagerApi = {
-  queryHomeList () {
-    return HomeManagerNativeApi.queryHomeList()
-  },
-  &#x2026;&#x2026;
-  }
-</code></pre><p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;TuyaHomeManagerApi&#x6765;&#x83B7;&#x53D6;</p>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;TuyaHomeManagerApi&#x6765;&#x83B7;&#x53D6;</p>
 <h4 id="&#x521B;&#x5EFA;&#x5BB6;&#x5EAD;">&#x521B;&#x5EFA;&#x5BB6;&#x5EAD;</h4>
-<pre><code class="lang-java"> <span class="hljs-comment">/**
-     *
-     * <span class="hljs-doctag">@param</span> name     &#x5BB6;&#x5EAD;&#x540D;&#x79F0;
-     * <span class="hljs-doctag">@param</span> lon      &#x7ECF;&#x5EA6;
-     * <span class="hljs-doctag">@param</span> lat      &#x7EAC;&#x5EA6;
-     * <span class="hljs-doctag">@param</span> geoName  &#x5BB6;&#x5EAD;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x540D;&#x79F0;
-     * <span class="hljs-doctag">@param</span> rooms    &#x623F;&#x95F4;&#x5217;&#x8868;
-     * <span class="hljs-doctag">@param</span> callback
-     */</span>
+<pre><code class="lang-javascript"> <span class="hljs-comment">/**
+   *
+   * @param name     &#x5BB6;&#x5EAD;&#x540D;&#x79F0;
+   * @param lon      &#x7ECF;&#x5EA6;
+   * @param lat      &#x7EAC;&#x5EA6;
+   * @param geoName  &#x5BB6;&#x5EAD;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x540D;&#x79F0;
+   * @param rooms    &#x623F;&#x95F4;&#x5217;&#x8868;
+   * @param callback
+   */</span>
   TuyaHomeManagerApi.createHome({
     name:<span class="hljs-string">&apos;&apos;</span>,<span class="hljs-comment">//&#x5BB6;&#x5EAD;&#x540D;&#x79F0;</span>
     lon:<span class="hljs-string">&apos;&apos;</span>,
     lat:<span class="hljs-string">&apos;&apos;</span>,
     geoName:<span class="hljs-string">&apos;&apos;</span>,<span class="hljs-comment">// &#x5BB6;&#x5EAD;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x540D;&#x79F0;</span>
     rooms:[]<span class="hljs-comment">//&#x623F;&#x95F4;&#x5217;&#x8868;</span>
-}).then(data=&gt;{}).<span class="hljs-keyword">catch</span>(e=&gt;{})
+}).then(data=&gt;{}).catch(e=&gt;{})
 </code></pre>
 <h4 id="&#x83B7;&#x53D6;&#x5BB6;&#x5EAD;&#x5217;&#x8868;">&#x83B7;&#x53D6;&#x5BB6;&#x5EAD;&#x5217;&#x8868;</h4>
-<pre><code class="lang-java">
+<pre><code class="lang-javascript">
 <span class="hljs-comment">/**
-     * <span class="hljs-doctag">@param</span> callback
-     */</span>
-    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">queryHomeList</span><span class="hljs-params">(ITuyaGetHomeListCallback callback)</span></span>;
+  * @param callback
+  */</span>
+    <span class="hljs-keyword">void</span> queryHomeList(ITuyaGetHomeListCallback callback);
 </code></pre>
 <h4 id="&#x5BB6;&#x5EAD;&#x4FE1;&#x606F;&#x7684;&#x53D8;&#x66F4;">&#x5BB6;&#x5EAD;&#x4FE1;&#x606F;&#x7684;&#x53D8;&#x66F4;</h4>
-<pre><code class="lang-java">
-     <span class="hljs-comment">/**
+<pre><code class="lang-javascript">
+   <span class="hljs-comment">/**
      * &#x6CE8;&#x518C;&#x5BB6;&#x5EAD;&#x4FE1;&#x606F;&#x7684;&#x53D8;&#x66F4;
      * &#x6709;&#xFF1A;&#x5BB6;&#x5EAD;&#x7684;&#x589E;&#x52A0;&#x3001;&#x5220;&#x9664;&#x3001;&#x4FE1;&#x606F;&#x53D8;&#x66F4;&#x3001;&#x5206;&#x4EAB;&#x5217;&#x8868;&#x7684;&#x53D8;&#x66F4;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x7684;&#x76D1;&#x542C;
      *
-     * <span class="hljs-doctag">@param</span> listener
+     * @param listener
      */</span>
 TuyaHomeManagerApi.registerTuyaHomeChangeListener(
     onHomeAdded,<span class="hljs-comment">//&#x5EAD;&#x6DFB;&#x52A0;&#x6210;&#x529F;,&#x7528;&#x4E8E;&#x591A;&#x8BBE;&#x5907;&#x6570;&#x636E;&#x540C;&#x6B65;</span>
@@ -735,12 +700,12 @@ TuyaHomeManagerApi.registerTuyaHomeChangeListener(
     <span class="hljs-comment">/**
      * &#x6CE8;&#x9500;&#x5BB6;&#x5EAD;&#x4FE1;&#x606F;&#x7684;&#x53D8;&#x66F4;
      *
-     * <span class="hljs-doctag">@param</span> listener
+     * @param listener
      */</span>
   TuyaHomeManagerApi.unregisterTuyaHomeChangeListener(sub);
 </code></pre>
 <h3 id="&#x5BF9;&#x5BB6;&#x5EAD;&#x7684;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x64CD;&#x4F5C;">&#x5BF9;&#x5BB6;&#x5EAD;&#x7684;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x64CD;&#x4F5C;</h3>
-<pre><code class="lang-js">
+<pre><code class="lang-javascript">
 &#x83B7;&#x53D6;&#x6B64;&#x6570;&#x636E;&#x524D;&#xFF0C;&#x5E94;&#x8BE5;&#x8C03;&#x7528;&#x5BB6;&#x5EAD;&#x7684;&#x521D;&#x59CB;&#x5316;&#x63A5;&#x53E3; getHomeDetail&#x3001;&#x6216;&#x8005;getHomeLocalCache &#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x6709;
   TuyaHomeApi.getHomeDetail({
       homeId: <span class="hljs-keyword">this</span>.state.homeId
@@ -787,7 +752,7 @@ TuyaHomeManagerApi.registerTuyaHomeChangeListener(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"家庭管理","level":"1.6.1","depth":2,"next":{"title":"家庭操作","level":"1.6.2","depth":2,"path":"resource/HomeOption.md","ref":"./resource/HomeOption.md","articles":[]},"previous":{"title":"家庭管理","level":"1.6","depth":1,"ref":"","articles":[{"title":"家庭管理","level":"1.6.1","depth":2,"path":"resource/HomeManager.md","ref":"./resource/HomeManager.md","articles":[]},{"title":"家庭操作","level":"1.6.2","depth":2,"path":"resource/HomeOption.md","ref":"./resource/HomeOption.md","articles":[]},{"title":"家庭成员管理","level":"1.6.3","depth":2,"path":"resource/HomeMember.md","ref":"./resource/HomeMember.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"resource/HomeManager.md","mtime":"2018-12-21T06:53:50.033Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-22T06:42:01.386Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"家庭管理","level":"1.6.1","depth":2,"next":{"title":"家庭操作","level":"1.6.2","depth":2,"path":"resource/HomeOption.md","ref":"./resource/HomeOption.md","articles":[]},"previous":{"title":"家庭管理","level":"1.6","depth":1,"ref":"","articles":[{"title":"家庭管理","level":"1.6.1","depth":2,"path":"resource/HomeManager.md","ref":"./resource/HomeManager.md","articles":[]},{"title":"家庭操作","level":"1.6.2","depth":2,"path":"resource/HomeOption.md","ref":"./resource/HomeOption.md","articles":[]},{"title":"家庭成员管理","level":"1.6.3","depth":2,"path":"resource/HomeMember.md","ref":"./resource/HomeMember.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"resource/HomeManager.md","mtime":"2018-12-25T02:32:55.869Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T02:19:39.061Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

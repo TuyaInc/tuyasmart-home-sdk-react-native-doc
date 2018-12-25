@@ -1,6 +1,6 @@
 ## 意见反馈
 ### 调用API
-import FeedBackNativeApi from './api/FeedBackNativeApi'
+#### `import FeedBackNativeApi from './api/FeedBackNativeApi'`
 
 用于在用户和企业或开发者之间提供一种沟通通道。
 

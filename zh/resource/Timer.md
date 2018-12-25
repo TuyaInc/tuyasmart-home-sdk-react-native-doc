@@ -1,6 +1,6 @@
 ## 定时任务
 ### 调用API
-import TuyaTimerApi from './api/TuyaTimerApi'
+#### `import TuyaTimerApi from './api/TuyaTimerApi'`
 
 
 涂鸦智能提供了基本的定时能力，支持设备（包括WiFi设备，蓝牙mesh子设备，zigbee子设备）和群组。并封装了针对设备dp点的定时器信息的增删改查接口。APP通过定时接口设置好定时器信息后，硬件模块会自动根据定时要求进行预订的操作。每个定时任务下可以包含多个定时器。如下图所示：

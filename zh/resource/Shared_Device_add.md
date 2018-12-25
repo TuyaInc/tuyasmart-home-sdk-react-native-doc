@@ -1,6 +1,6 @@
 ### 添加共享
 ### 调用API
-import TuyaShareApi from './api/TuyaShareApi'
+#### `import TuyaShareApi from './api/TuyaShareApi'`
 
 通过调用TuyaShareApi里的方法完成相应操作
 #### (1)添加多个设备共享（覆盖）
@@ -31,9 +31,9 @@ devIds:'',
 
 ```java
 TuyaShareApi.addShareWithHomeId({
-homeId:'',
-countryCode:'',
-userAccount:'',
+homeId:123456,
+countryCode:'86',
+userAccount:'123456',
 devIds:'',
 }).then(data=>{}).catch(err=>{})
 ```
@@ -72,8 +72,8 @@ memberId:'',
  */
  
 TuyaShareApi.addShareWithMemberId({
-	memberId:'',
-	devIds:'',
+	memberId:123123,
+	devIds:'23123213dde',
 }).then(data=>{}).catch(err=>{})
 
 ```
@@ -107,8 +107,8 @@ disableDevShare({
 
 ```js
 TuyaShareApi.disableDevShare({
-	devId:'',
-	memberId:'',
+	devId:'vsdfseq123',
+	memberId:12312312,
 }).then(data=>{}).catch(err=>{})
 ```
 
@@ -133,7 +133,7 @@ queryUserShareList({
 
 ```js
 TuyaShareApi.queryUserShareList({
-	homeId:'',
+	homeId:123123,
 }).then(data=>{}).catch(err=>{})
 ```
 
@@ -218,7 +218,7 @@ TuyaShareApi.queryShareDevFromInfo().then(data=>{
 ```
 @param memberId 用户成员Id 从SharedUserInfoBean中获取
 getUserShareInfo({
-	memberId:'',
+	memberId:123123,
 })
 
 ```
@@ -227,7 +227,7 @@ getUserShareInfo({
 
 ```java
 TuyaShareApi.getUserShareInfo({
-	memberId:'',
+	memberId:123123,
 }).then(data=>{}).catch(err=>{})
 ```
 
@@ -250,7 +250,7 @@ getReceivedShareInfo({
 
 ```java
 TuyaShareApi.getReceivedShareInfo({
-	memberId:'',
+	memberId:123123,
 }).then(data=>{}).catch(err=>{})
 ```
 

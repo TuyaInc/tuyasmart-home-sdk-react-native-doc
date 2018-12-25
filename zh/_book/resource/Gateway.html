@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="FAQ.html" />
+    <link rel="next" href="constant.html" />
     
     
     <link rel="prev" href="Feedback.html" />
@@ -593,33 +593,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.17" data-path="FAQ.html">
-            
-                <a href="FAQ.html">
-            
-                    
-                    常见问题
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.18" data-path="Update_Log.html">
-            
-                <a href="Update_Log.html">
-            
-                    
-                    更新日志
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.19" data-path="constant.html">
+        <li class="chapter " data-level="1.17" data-path="constant.html">
             
                 <a href="constant.html">
             
@@ -679,7 +653,7 @@
                                 
                                 <h2 id="&#x7F51;&#x5173;">&#x7F51;&#x5173;</h2>
 <h3 id="&#x8C03;&#x7528;api">&#x8C03;&#x7528;API</h3>
-<p>import TuyaGatewayApi from &apos;./api/TuyaGatewayApi&apos;</p>
+<h4 id="import-tuyagatewayapi-from-apituyagatewayapi"><code>import TuyaGatewayApi from &apos;./api/TuyaGatewayApi&apos;</code></h4>
 <p>&#x7F51;&#x5173;&#x7C7B;&#x5C01;&#x88C5;&#x4E86;ZigBee&#x7F51;&#x5173;&#x7684;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#xFF0C;&#x5305;&#x62EC;&#x63A7;&#x5236;&#xFF0C;&#x67E5;&#x8BE2;&#x5B50;&#x8BBE;&#x5907;&#xFF0C;&#x76D1;&#x542C;&#x5B50;&#x8BBE;&#x5907;&#x72B6;&#x6001;&#x7B49;&#x3002;
 &#x53EF;&#x4EE5;&#x901A;&#x8FC7;GatewayNativeApi&#x63D0;&#x4F9B;&#x7684;&#x76F8;&#x5E94;&#x65B9;&#x6CD5;&#x53BB;&#x5B8C;&#x6210;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#x3002;
 <code>const GatewayNativeApi = require(&apos;react-native&apos;).NativeModules.TuyaGatewayModule</code></p>
@@ -691,32 +665,33 @@
 <li>registerSubDevListener &#x6CE8;&#x518C;&#x5B50;&#x8BBE;&#x5907;&#x4FE1;&#x606F;&#x53D8;&#x66F4;</li>
 <li>unRegisterSubDevListener &#x6CE8;&#x9500;&#x5B50;&#x8BBE;&#x5907;&#x4FE1;&#x606F;&#x53D8;&#x66F4;</li>
 </ul>
-<pre><code>TuyaGatewayApi.publishDps({
-    devId:&apos;&apos;,
-    localId:&apos;&apos;,
-    dps:&apos;&apos;
+<pre><code class="lang-javascript">TuyaGatewayApi.publishDps({
+    devId:<span class="hljs-string">&apos;&apos;</span>,
+    localId:<span class="hljs-string">&apos;&apos;</span>,
+    dps:<span class="hljs-string">&apos;&apos;</span>
 }).then(data=&gt;{}).catch(e=&gt;{})
 
 TuyaGatewayApi.broadcastDps({
-    devId:&apos;&apos;,
-    dps:&apos;&apos;
+    devId:<span class="hljs-string">&apos;&apos;</span>,
+    dps:<span class="hljs-string">&apos;&apos;</span>
 }).then(data=&gt;{}).catch(e=&gt;{})
 
 TuyaGatewayApi.multicastDps({
-    devId:&apos;&apos;,
-    localId:&apos;&apos;,
-    dps:&apos;&apos;
+    devId:<span class="hljs-string">&apos;&apos;</span>,
+    localId:<span class="hljs-string">&apos;&apos;</span>,
+    dps:<span class="hljs-string">&apos;&apos;</span>
 }).then(data=&gt;{}).catch(e=&gt;{})
 
 
 TuyaGatewayApi.registerSubDevListener({
-    devId:&apos;&apos;,
+    devId:<span class="hljs-string">&apos;&apos;</span>,
 },onSubDevDpUpdate,onSubDevRemoved,onSubDevAdded,onSubDevInfoUpdate,onSubDevStatusChanged)
 
 TuyaGatewayApi.unRegisterSubDevListener({
-    devId:&apos;&apos;,
+    devId:<span class="hljs-string">&apos;&apos;</span>,
 },sub)
-</code></pre><hr>
+</code></pre>
+<hr>
 
                                 
                                 </section>
@@ -749,7 +724,7 @@ TuyaGatewayApi.unRegisterSubDevListener({
                 </a>
                 
                 
-                <a href="FAQ.html" class="navigation navigation-next " aria-label="Next page: 常见问题">
+                <a href="constant.html" class="navigation navigation-next " aria-label="Next page: React-Native用到的字段">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -760,7 +735,7 @@ TuyaGatewayApi.unRegisterSubDevListener({
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"网关","level":"1.16","depth":1,"next":{"title":"常见问题","level":"1.17","depth":1,"path":"resource/FAQ.md","ref":"./resource/FAQ.md","articles":[]},"previous":{"title":"意见反馈","level":"1.15","depth":1,"path":"resource/Feedback.md","ref":"./resource/Feedback.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"resource/Gateway.md","mtime":"2018-12-21T06:53:17.235Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-22T06:42:01.386Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"网关","level":"1.16","depth":1,"next":{"title":"React-Native用到的字段","level":"1.17","depth":1,"path":"resource/constant.md","ref":"./resource/constant.md","articles":[]},"previous":{"title":"意见反馈","level":"1.15","depth":1,"path":"resource/Feedback.md","ref":"./resource/Feedback.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"resource/Gateway.md","mtime":"2018-12-25T02:43:18.780Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T02:19:39.061Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

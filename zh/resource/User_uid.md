@@ -45,9 +45,9 @@ loginWithUid
 ```js
 //uid登陆
 TuyaUserApi.loginWithUid.({
-	countryCode:'',
-	uid:'',
-	passwd:'',
+	countryCode:'86',
+	uid:'123123',
+	passwd:'123123',
 }).then(data=>{}).catch(err=>{})
 ```
 ## 三、用户uid重置密码
@@ -73,9 +73,9 @@ loginOrRegisterWithUid
 ```js
 //uid登陆
 TuyaUserApi.loginOrRegisterWithUid({
-	countryCode:'',
-	uid:'',
-	passwd:'',
+	countryCode:'86',
+	uid:'123',
+	passwd:'123',
 }).then(data=>{
 
 }).catch(err=>{})

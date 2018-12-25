@@ -1,6 +1,6 @@
 ### 家庭操作类
 ### 调用API
-import TuyaHomeApi from './api/TuyaHomeApi'
+#### `import TuyaHomeApi from './api/TuyaHomeApi'`
 
 
 TuyaHomeApi 提供了家庭相关的操作类，负责处理家庭的数据和信息的更新。
@@ -92,11 +92,11 @@ TuyaHomeApi.updateHome({
 
 ```
  /**
-     * 移除房间
-     *
-     * @param roomId
-     * @param callback
-     */
+   * 移除房间
+   *
+   * @param roomId
+   * @param callback
+   */
 TuyaHomeApi.removeRoom({
 	homeId:'',
 	roomId:'',
@@ -109,11 +109,11 @@ TuyaHomeApi.removeRoom({
 ```java
 
  /**
-     * 排序房间
-     *
-     * @param idList   房间id的list
-     * @param callback
-     */
+   * 排序房间
+   *
+   * @param idList   房间id的list
+   * @param callback
+   */
 TuyaHomeApi.sortRoom({
 	homeId:'',
 	idList:[],//房间id的list
@@ -125,10 +125,10 @@ TuyaHomeApi.sortRoom({
 
 ```java
    /**
-     * 查询房间列表
-     *
-     * @param homeId
-     */
+    * 查询房间列表
+    *
+    * @param homeId
+    */
 TuyaHomeApi.queryRoomList({
 	homeId:'',
 }).then(data=>{}).catch(e=>{})

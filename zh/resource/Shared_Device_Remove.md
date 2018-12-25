@@ -1,6 +1,6 @@
 ### 移除分享
 ### 调用API
-import TuyaShareApi from './api/TuyaShareApi'
+#### `import TuyaShareApi from './api/TuyaShareApi'`
 
 通过调用TuyaShareApi里的方法完成相应操作
 

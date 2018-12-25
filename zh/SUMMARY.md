@@ -40,6 +40,4 @@
 * [消息中心](./resource/Message.md)
 * [意见反馈](./resource/Feedback.md)
 * [网关](./resource/Gateway.md)
-* [常见问题](./resource/FAQ.md)
-* [更新日志](./resource/Update_Log.md)
 * [React-Native用到的字段](./resource/constant.md)

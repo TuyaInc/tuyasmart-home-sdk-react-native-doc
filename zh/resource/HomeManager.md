@@ -1,34 +1,23 @@
 ### 家庭管理类
 ### 调用API
-import TuyaHomeManagerApi from './api/TuyaHomeManagerApi'
+#### `import TuyaHomeManagerApi from './api/TuyaHomeManagerApi'`
 
 TuyaHomeManagerApi 提供了创建家庭、获取家庭列表以及监听家庭相关的变更
 
-```
-const HomeManagerNativeApi = require('react-native').NativeModules
-  .TuyaHomeManagerModule
-  
-  const TuyaHomeManagerApi = {
-  queryHomeList () {
-    return HomeManagerNativeApi.queryHomeList()
-  },
-  ……
-  }
-```
 可以通过TuyaHomeManagerApi来获取
 
 #### 创建家庭
 
-```java
+```javascript
  /**
-     *
-     * @param name     家庭名称
-     * @param lon      经度
-     * @param lat      纬度
-     * @param geoName  家庭地理位置名称
-     * @param rooms    房间列表
-     * @param callback
-     */
+   *
+   * @param name     家庭名称
+   * @param lon      经度
+   * @param lat      纬度
+   * @param geoName  家庭地理位置名称
+   * @param rooms    房间列表
+   * @param callback
+   */
   TuyaHomeManagerApi.createHome({
 	name:'',//家庭名称
 	lon:'',
@@ -43,19 +32,19 @@ const HomeManagerNativeApi = require('react-native').NativeModules
 
 #### 获取家庭列表
 
-```java
+```javascript
 
 /**
-     * @param callback
-     */
+  * @param callback
+  */
     void queryHomeList(ITuyaGetHomeListCallback callback);
 ```
 
 #### 家庭信息的变更
 
-```java
+```javascript
 
-	 /**
+   /**
      * 注册家庭信息的变更
      * 有：家庭的增加、删除、信息变更、分享列表的变更和服务器连接成功的监听
      *
@@ -85,7 +74,7 @@ TuyaHomeManagerApi.registerTuyaHomeChangeListener(
 
 ### 对家庭的缓存数据操作
 
-```js
+```javascript
 
 获取此数据前，应该调用家庭的初始化接口 getHomeDetail、或者getHomeLocalCache 之后才会有
   TuyaHomeApi.getHomeDetail({

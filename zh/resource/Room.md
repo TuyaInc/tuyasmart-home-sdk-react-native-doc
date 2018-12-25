@@ -1,6 +1,6 @@
 ###  房间管理类
 ### 调用API
-import TuyaRoomApi from './api/TuyaRoomApi'
+#### `import TuyaRoomApi from './api/TuyaRoomApi'`
 
 TuyaRoomApi 提供房间的管理类，负责房间的新增、删除设备或群组
 可以通过 TuyaRoomApi 去创建

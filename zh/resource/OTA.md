@@ -1,11 +1,10 @@
 #### 固件升级
 ### 调用API
-import TuyaOTAApi from './api/TuyaOTAApi'
+#### `import TuyaOTAApi from './api/TuyaOTAApi'`
 
 
 ##### 【描述】
-const OTANativeApi = require('react-native').NativeModules.TuyaOTAModule
-我们可以通过这这个方式从native调用相应方法
+我们通过上面调用api拿到TuyaOTAPi进行相关操作
 固件升级主要用于修复设备bug和增加设备新功能。固件升级主要分两种，第一种是设备升级，第二种是MCU升级。升级的接口位于TuyaOTAApi中。
 
 #### 查询固件升级信息

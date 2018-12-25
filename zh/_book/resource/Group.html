@@ -591,33 +591,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.17" data-path="FAQ.html">
-            
-                <a href="FAQ.html">
-            
-                    
-                    常见问题
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.18" data-path="Update_Log.html">
-            
-                <a href="Update_Log.html">
-            
-                    
-                    更新日志
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.19" data-path="constant.html">
+        <li class="chapter " data-level="1.17" data-path="constant.html">
             
                 <a href="constant.html">
             
@@ -677,7 +651,7 @@
                                 
                                 <h2 id="&#x7FA4;&#x7EC4;&#x7BA1;&#x7406;">&#x7FA4;&#x7EC4;&#x7BA1;&#x7406;</h2>
 <h3 id="&#x8C03;&#x7528;api">&#x8C03;&#x7528;API</h3>
-<p>import TuyaGroupApi from &apos;./api/TuyaGroupApi&apos;</p>
+<h4 id="import-tuyagroupapi-from-apituyagroupapi"><code>import TuyaGroupApi from &apos;./api/TuyaGroupApi&apos;</code></h4>
 <p>&#x6D82;&#x9E26;&#x4E91;&#x652F;&#x6301;&#x7FA4;&#x7EC4;&#x7BA1;&#x7406;&#x4F53;&#x7CFB;&#xFF1A;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x7FA4;&#x7EC4;&#xFF0C;&#x4FEE;&#x6539;&#x7FA4;&#x7EC4;&#x540D;&#x79F0;&#xFF0C;&#x7BA1;&#x7406;&#x7FA4;&#x7EC4;&#x8BBE;&#x5907;&#xFF0C;&#x901A;&#x8FC7;&#x7FA4;&#x7EC4;&#x7BA1;&#x7406;&#x591A;&#x4E2A;&#x8BBE;&#x5907;&#xFF0C;&#x89E3;&#x6563;&#x7FA4;&#x7EC4;&#x3002;</p>
 <h3 id="&#x521B;&#x5EFA;&#x7FA4;&#x7EC4;">&#x521B;&#x5EFA;&#x7FA4;&#x7EC4;</h3>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
@@ -705,7 +679,7 @@ TuyaGroupApi.createGroup({
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
 <p>&#x6B64;&#x63A5;&#x53E3;&#x4E3B;&#x8981;&#x662F;&#x4ECE;&#x4E91;&#x7AEF;&#x62C9;&#x53D6;&#x6700;&#x65B0;&#x7FA4;&#x7EC4;&#x5217;&#x8868;&#x3002;</p>
 <h5 id="&#x3010;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3011;">&#x3010;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3011;</h5>
-<pre><code class="lang-js">queryDeviceListToAddGroup({
+<pre><code class="lang-js">TuyaGroupApi.queryDeviceListToAddGroup({
     homeId:, --<span class="hljs-built_in">Number</span>
     productId:<span class="hljs-string">&apos;&apos;</span>,  ---string
 })
@@ -725,30 +699,23 @@ TuyaGroupApi.queryDeviceListToAddGroup({
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
 <p>&#x7FA4;&#x7EC4;&#x4FEE;&#x6539;&#x540D;&#x79F0;</p>
 <h5 id="&#x3010;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3011;">&#x3010;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3011;</h5>
-<pre><code class="lang-java">* &#x7FA4;&#x7EC4;&#x4FEE;&#x6539;&#x540D;&#x79F0;
-* <span class="hljs-meta">@param</span> groupId    &#x7FA4;&#x7EC4;id
-* <span class="hljs-meta">@param</span> callback &#x56DE;&#x8C03;
-mITuyaGroup.updateGroupName(IControlCallback callback)
+<pre><code class="lang-js">* &#x7FA4;&#x7EC4;&#x4FEE;&#x6539;&#x540D;&#x79F0;
+* @param groupId    &#x7FA4;&#x7EC4;id
+* @param callback &#x56DE;&#x8C03;
+updateGroupName({groupID:, <span class="hljs-comment">//Number</span>
+name:<span class="hljs-string">&apos;&apos;</span>})
 </code></pre>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java"><span class="hljs-comment">//&#x7FA4;&#x7EC4;&#x91CD;&#x547D;&#x540D;</span>
-mITuyaGroup.updateGroupName(<span class="hljs-keyword">new</span> IControlCallback() {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">()</span> </span>{
-    }
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String s, String s1)</span> </span>{
-    }
-});
+<pre><code class="lang-js"><span class="hljs-comment">//&#x7FA4;&#x7EC4;&#x91CD;&#x547D;&#x540D;</span>
+TuyaGroupApi.updateGroupName({groupID:<span class="hljs-number">123123</span>,name:<span class="hljs-string">&apos;hah&apos;</span>})
 </code></pre>
 <h4 id="1-&#x89E3;&#x6563;&#x7FA4;&#x7EC4;">(1) &#x89E3;&#x6563;&#x7FA4;&#x7EC4;</h4>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
 <p> dismissGroup &#x89E3;&#x6563;&#x7FA4;&#x7EC4;</p>
 <h5 id="&#x3010;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3011;">&#x3010;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3011;</h5>
-<pre><code class="lang-java">* &#x89E3;&#x6563;&#x7FA4;&#x7EC4;
-* <span class="hljs-meta">@param</span> groupId    &#x7FA4;&#x7EC4;id
-* <span class="hljs-meta">@param</span> callback &#x56DE;&#x8C03;
+<pre><code class="lang-js">* &#x89E3;&#x6563;&#x7FA4;&#x7EC4;
+* @param groupId    &#x7FA4;&#x7EC4;id
+* @param callback &#x56DE;&#x8C03;
 TuyaGroupApi.dismissGroup({
     groupId:<span class="hljs-string">&apos;&apos;</span>,
 })
@@ -756,7 +723,7 @@ TuyaGroupApi.dismissGroup({
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
 <pre><code class="lang-js"><span class="hljs-comment">//&#x5220;&#x9664;&#x7FA4;&#x7EC4;</span>
 TuyaGroupApi.dismissGroup({
-    groupId:<span class="hljs-string">&apos;&apos;</span>,
+    groupId:<span class="hljs-number">123456</span>,
 }).then(data=&gt;{}).catch(e=&gt;{})
 </code></pre>
 <h4 id="2-&#x7FA4;&#x7EC4;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;">(2) &#x7FA4;&#x7EC4;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;</h4>
@@ -775,26 +742,26 @@ TuyaGatewayApi.unregisterGroupListener({
 },sub)
 </code></pre>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java"><span class="hljs-comment">//&#x6CE8;&#x518C;&#x7FA4;&#x7EC4;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;</span>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x6CE8;&#x518C;&#x7FA4;&#x7EC4;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;</span>
 TuyaGroupApi.registerGroupListener({
    groupId:<span class="hljs-string">&apos;&apos;</span>,
 },onDpUpdate,onGroupInfoUpdate,onGroupRemoved).then(data=&gt;{
-}).<span class="hljs-keyword">catch</span>(err=&gt;{
+}).catch(err=&gt;{
 })
 <span class="hljs-comment">//&#x6CE8;&#x9500;&#x7FA4;&#x7EC4;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;</span>
 TuyaGatewayApi.unregisterGroupListener({
     groupId:<span class="hljs-string">&apos;&apos;</span>,
 },sub).(data=&gt;{
-}).<span class="hljs-keyword">catch</span>(err=&gt;{
+}).catch(err=&gt;{
 })
 </code></pre>
 <h4 id="&#xFF08;3&#xFF09;&#x53D1;&#x9001;&#x7FA4;&#x7EC4;&#x63A7;&#x5236;&#x547D;&#x4EE4;">&#xFF08;3&#xFF09;&#x53D1;&#x9001;&#x7FA4;&#x7EC4;&#x63A7;&#x5236;&#x547D;&#x4EE4;</h4>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
 <p>&#x53D1;&#x9001;&#x7FA4;&#x7EC4;&#x63A7;&#x5236;&#x547D;&#x4EE4;</p>
 <h5 id="&#x3010;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3011;">&#x3010;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3011;</h5>
-<pre><code class="lang-java">* &#x53D1;&#x9001;&#x7FA4;&#x7EC4;&#x63A7;&#x5236;&#x547D;&#x4EE4;
-* <span class="hljs-meta">@param</span> command &#x63A7;&#x5236;&#x547D;&#x4EE4;
-* <span class="hljs-meta">@param</span> listener &#x56DE;&#x8C03;
+<pre><code class="lang-js">* &#x53D1;&#x9001;&#x7FA4;&#x7EC4;&#x63A7;&#x5236;&#x547D;&#x4EE4;
+* @param command &#x63A7;&#x5236;&#x547D;&#x4EE4;
+* @param listener &#x56DE;&#x8C03;
 TuyaGroupApi.publishDps({
     groupId:<span class="hljs-string">&apos;&apos;</span>,
     command:{}
@@ -804,7 +771,7 @@ TuyaGroupApi.publishDps({
 <pre><code class="lang-js"><span class="hljs-comment">//command &#x53C2;&#x8003;&#x8BBE;&#x5907;&#x7BC7;</span>
 TuyaGroupApi.publishDps({
     groupId:<span class="hljs-string">&apos;&apos;</span>,
-    command:{}
+    command:<span class="hljs-string">&apos;{&apos;</span><span class="hljs-number">1</span><span class="hljs-string">&apos;:true}&apos;</span>
 }).then(data=&gt;{}).catch(e=&gt;{})
 </code></pre>
 <h5 id="&#x3010;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x3011;">&#x3010;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x3011;</h5>
@@ -855,7 +822,7 @@ TuyaGroupApi.onDestroy({
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"群组管理","level":"1.12","depth":1,"next":{"title":"智能场景","level":"1.13","depth":1,"ref":"","articles":[{"title":"智能场景","level":"1.13.1","depth":2,"path":"resource/SmartScene_Manager.md","ref":"./resource/SmartScene_Manager.md","articles":[]}]},"previous":{"title":"定时任务","level":"1.11","depth":1,"path":"resource/Timer.md","ref":"./resource/Timer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"resource/Group.md","mtime":"2018-12-22T07:01:22.099Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-22T06:42:01.386Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"群组管理","level":"1.12","depth":1,"next":{"title":"智能场景","level":"1.13","depth":1,"ref":"","articles":[{"title":"智能场景","level":"1.13.1","depth":2,"path":"resource/SmartScene_Manager.md","ref":"./resource/SmartScene_Manager.md","articles":[]}]},"previous":{"title":"定时任务","level":"1.11","depth":1,"path":"resource/Timer.md","ref":"./resource/Timer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"resource/Group.md","mtime":"2018-12-25T02:41:30.016Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T02:19:39.061Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

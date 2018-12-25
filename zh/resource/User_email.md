@@ -27,13 +27,13 @@ registerAccountWithEmail
 ```js
 //注册获取邮箱验证码
  TuyaUserApi.getRegisterEmailValidateCode({
-	 email:'',
+	 email:'123@123.com',
  }).then(data=>{}).catch(err=>{})
 
 //邮箱密码注册
  TuyaUserApi.registerAccountWithEmail({
-	 email:'',
-	 passwd:'',
+	 email:'123@123.com',
+	 passwd:'123456',
  }).then(data=>{}).catch(err=>{})
 ```
 > 注意事项   账户一旦注册到一个国家，目前数据无法迁移其他国家。

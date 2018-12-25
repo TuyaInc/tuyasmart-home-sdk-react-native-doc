@@ -591,33 +591,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.17" data-path="FAQ.html">
-            
-                <a href="FAQ.html">
-            
-                    
-                    常见问题
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.18" data-path="Update_Log.html">
-            
-                <a href="Update_Log.html">
-            
-                    
-                    更新日志
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.19" data-path="constant.html">
+        <li class="chapter " data-level="1.17" data-path="constant.html">
             
                 <a href="constant.html">
             
@@ -677,7 +651,7 @@
                                 
                                 <h2 id="&#x667A;&#x80FD;">&#x667A;&#x80FD;</h2>
 <h3 id="&#x8C03;&#x7528;api">&#x8C03;&#x7528;API</h3>
-<p>import TuyaSceneApi from &apos;./api/TuyaSceneApi&apos;</p>
+<h4 id="import-tuyasceneapi-from-apituyasceneapi"><code>import TuyaSceneApi from &apos;./api/TuyaSceneApi&apos;</code></h4>
 <h3 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h3>
 <p>&#x667A;&#x80FD;&#x5206;&#x4E3A;&#x573A;&#x666F;&#x548C;&#x81EA;&#x52A8;&#x5316;&#x3002;&#x573A;&#x666F;&#x662F;&#x7528;&#x6237;&#x6DFB;&#x52A0;&#x52A8;&#x4F5C;&#xFF0C;&#x624B;&#x52A8;&#x89E6;&#x53D1;&#xFF1B;&#x81EA;&#x52A8;&#x5316;&#x662F;&#x7531;&#x7528;&#x6237;&#x8BBE;&#x5B9A;&#x6761;&#x4EF6;&#xFF0C;&#x5F53;&#x6761;&#x4EF6;&#x89E6;&#x53D1;&#x540E;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x8BBE;&#x5B9A;&#x7684;&#x52A8;&#x4F5C;&#x3002;</p>
 <p>&#x6D82;&#x9E26;&#x667A;&#x80FD;Android SDK&#x4E2D;&#xFF0C;&#x667A;&#x80FD;&#x5305;&#x62EC;&#x573A;&#x666F;&#x548C;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x63A5;&#x53E3;</p>
@@ -687,10 +661,10 @@
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
 <p>&#x83B7;&#x53D6;&#x573A;&#x666F;&#x5217;&#x8868;&#xFF0C;&#x5F53;&#x573A;&#x666F;&#x9996;&#x9875;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F7F;&#x7528;&#x3002;</p>
 <h5 id="&#x3010;&#x65B9;&#x6CD5;&#x539F;&#x578B;&#x3011;">&#x3010;&#x65B9;&#x6CD5;&#x539F;&#x578B;&#x3011;</h5>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre><code class="lang-js"><span class="hljs-comment">/**
  * &#x83B7;&#x53D6;&#x573A;&#x666F;&#x5217;&#x8868;
- * <span class="hljs-doctag">@param</span> homeId &#x5BB6;&#x5EAD;Id
- * <span class="hljs-doctag">@param</span> callback &#x56DE;&#x8C03;
+ * @param homeId &#x5BB6;&#x5EAD;Id
+ * @param callback &#x56DE;&#x8C03;
  */</span>
 TuyaSceneApi.getSceneList({
     homeId:<span class="hljs-string">&apos;&apos;</span>,
@@ -727,7 +701,7 @@ Actions
     homeId:<span class="hljs-string">&apos;&apos;</span>,
 }).then(data=&gt;{}).catch(e=&gt;{})
 </code></pre>
-<h3 id="&#x81EA;&#x52A8;&#x5316;&#x6761;&#x4EF6;">&#x81EA;&#x52A8;&#x5316;&#x6761;&#x4EF6;</h3>
+<h3 id="&#x81EA;&#x52A8;&#x5316;&#x6761;&#x4EF6;-------------------contionlists">&#x81EA;&#x52A8;&#x5316;&#x6761;&#x4EF6;                ---contionLists</h3>
 <p>&#x7528;&#x6237;&#x53EF;&#x8BBE;&#x7F6E;&#x7684;&#x6761;&#x4EF6;&#x5305;&#x62EC;&#x5929;&#x6C14;&#x72B6;&#x51B5;&#x3001;&#x8BBE;&#x5907;&#x72B6;&#x51B5;&#x3001;&#x5B9A;&#x65F6;&#x3002;
 &#x200B;<br>&#x200B;    </p>
 <ul>
@@ -749,38 +723,9 @@ Actions
 <pre><code>&#x6CE8;: PlaceFacade&#x7C7B;&#x5BF9;&#x8C61;&#x8BF7;&#x4ECE;[&#x83B7;&#x53D6;&#x57CE;&#x5E02;&#x5217;&#x8868;](####10.2.4),[&#x6839;&#x636E;&#x7ECF;&#x7EAC;&#x5EA6;&#x83B7;&#x53D6;&#x57CE;&#x5E02;](####10.2.6), [&#x6839;&#x636E;&#x57CE;&#x5E02;id&#x83B7;&#x53D6;&#x57CE;&#x5E02;](####10.2.5)&#x63A5;&#x53E3;&#x83B7;&#x53D6;&#x3002;
 </code></pre><p>  &#x200B;      &#x76EE;&#x524D;&#x83B7;&#x53D6;&#x57CE;&#x5E02;&#x63A5;&#x53E3;&#x53EA;&#x652F;&#x6301;&#x56FD;&#x5185;&#x3002;</p>
 </li>
-<li><p>&#x8BBE;&#x5907;&#x578B;</p>
-<p>  &#x8BBE;&#x5907;&#x6761;&#x4EF6;&#x662F;&#x6307;&#x5F53;&#x4E00;&#x4E2A;&#x8BBE;&#x5907;&#x5904;&#x4E8E;&#x67D0;&#x79CD;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x4F1A;&#x89E6;&#x53D1;&#x53E6;&#x4E00;&#x53F0;&#x6216;&#x591A;&#x53F0;&#x8BBE;&#x5907;&#x7684;&#x9884;&#x5B9A;&#x4EFB;&#x52A1;&#x3002;<strong>&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x5FAA;&#x73AF;&#x63A7;&#x5236;&#xFF0C;&#x540C;&#x4E00;&#x53F0;&#x8BBE;&#x5907;&#x65E0;&#x6CD5;&#x540C;&#x65F6;&#x4F5C;&#x4E3A;&#x6761;&#x4EF6;&#x548C;&#x4EFB;&#x52A1;&#x3002;</strong></p>
-<pre><code class="lang-java">    <span class="hljs-comment">/**
-     * &#x521B;&#x5EFA;&#x8BBE;&#x5907;&#x578B;&#x6761;&#x4EF6;
-     *
-     * <span class="hljs-doctag">@param</span> devBean &#x6761;&#x4EF6;&#x8BBE;&#x5907;
-     * <span class="hljs-doctag">@param</span> dpId    &#x6761;&#x4EF6;dpId
-     * <span class="hljs-doctag">@param</span> rule    &#x6761;&#x4EF6;&#x89C4;&#x5219;
-     * <span class="hljs-doctag">@return</span>
-     */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> SceneCondition <span class="hljs-title">createDevCondition</span><span class="hljs-params">(
-        SceneDevBean devBean,
-        String dpId,
-        Rule rule)</span>
-</span></code></pre>
-<pre><code>&#x6CE8;: SceneDevBean&#x7C7B;&#x5BF9;&#x8C61;&#x8BF7;&#x4ECE;[&#x83B7;&#x53D6;&#x6761;&#x4EF6;&#x8BBE;&#x5907;&#x5217;&#x8868;](####10.2.2)&#x63A5;&#x53E3;&#x83B7;&#x53D6;&#x3002;
-</code></pre></li>
-<li><p>&#x5B9A;&#x65F6;</p>
-<p>  &#x5B9A;&#x65F6;&#x6307;&#x5230;&#x8FBE;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x6267;&#x884C;&#x9884;&#x5B9A;&#x4EFB;&#x52A1;  </p>
-<pre><code class="lang-js">  <span class="hljs-comment">/**
-    * &#x521B;&#x5EFA;&#x5B9A;&#x65F6;&#x6761;&#x4EF6;
-    * @param display &#x7528;&#x4E8E;&#x5C55;&#x793A;&#x7684;&#x7528;&#x6237;&#x9009;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x6761;&#x4EF6;
-    * @param name  &#x5B9A;&#x65F6;&#x6761;&#x4EF6;&#x7684;&#x540D;&#x79F0;
-    * @param type  &#x6761;&#x4EF6;&#x7C7B;&#x578B;
-    * @param rule  &#x6761;&#x4EF6;&#x89C4;&#x5219;
-    * @return
-    */</span>
-    public <span class="hljs-keyword">static</span> SceneCondition createTimerCondition(<span class="hljs-built_in">String</span> display,<span class="hljs-built_in">String</span> name,<span class="hljs-built_in">String</span> type,Rule rule)
-</code></pre>
-</li>
 </ul>
-<p>rule-&#x6761;&#x4EF6;&#x89C4;&#x5219;&#x6709;&#x56DB;&#x79CD;&#x89C4;&#x5219;:
+<p>-
+rule-&#x6761;&#x4EF6;&#x89C4;&#x5219;&#x6709;&#x56DB;&#x79CD;&#x89C4;&#x5219;:
 &#x200B;    </p>
 <ul>
 <li><p>&#x6570;&#x503C;&#x578B;</p>
@@ -1076,57 +1021,46 @@ TimerRule timerRule = TimerRule.newInstance(&quot;Asia/Shanghai&quot;,&quot;0111
  * <span class="hljs-doctag">@param</span> countryCode &#x56FD;&#x5BB6;&#x7801;
  * <span class="hljs-doctag">@param</span> callback    &#x56DE;&#x8C03;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getCityListByCountryCode</span><span class="hljs-params">(String countryCode, ITuyaResultCallback&lt;List&lt;PlaceFacadeBean&gt;&gt; callback)</span></span>;
+TuyaSceneApi.getCityListByCountryCode(countryCode: <span class="hljs-string">&quot;cn&quot;</span>)
 </code></pre>
-<p>&#x5176;&#x4E2D;, <code>PlaceFacadeBean</code>&#x7C7B;&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;&#x63A5;&#x53E3;:</p>
+<p>&#x5176;&#x4E2D;, <code>Place</code>jsonbean&#x5982;&#x4E0B;:</p>
 <pre><code class="lang-java"><span class="hljs-comment">/**
  * &#x83B7;&#x53D6;&#x533A;&#x57DF;&#x540D;&#x79F0;
  *
  * <span class="hljs-doctag">@return</span> &#x533A;&#x57DF;&#x540D;&#x79F0;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getArea</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> area;
-}
+area
 
 <span class="hljs-comment">/**
  * &#x83B7;&#x53D6;&#x7701;&#x4EFD;&#x540D;&#x79F0;
  *
  * <span class="hljs-doctag">@return</span> &#x7701;&#x4EFD;&#x540D;&#x79F0;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getProvince</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> province;
-}
+province
 
 <span class="hljs-comment">/**
  * &#x83B7;&#x53D6;&#x57CE;&#x5E02;&#x540D;&#x79F0;
  *
  * <span class="hljs-doctag">@return</span> &#x57CE;&#x5E02;&#x540D;&#x79F0;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getCity</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> city;
-}
+city
 
 <span class="hljs-comment">/**
  * &#x83B7;&#x53D6;&#x57CE;&#x5E02;id
  *
  * <span class="hljs-doctag">@return</span> &#x57CE;&#x5E02;id
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">getCityId</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> cityId;
-}
+cityId
 </code></pre>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java">TuyaHomeSdk.getSceneManagerInstance().getCityListByCountryCode(
-    <span class="hljs-string">&quot;cn&quot;</span>,  <span class="hljs-comment">//&#x4E2D;&#x56FD;</span>
-    <span class="hljs-keyword">new</span> ITuyaResultCallback&lt;List&lt;PlaceFacadeBean&gt;&gt;() {
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(List&lt;PlaceFacadeBean&gt; placeFacadeBeans)</span> </span>{
-        }
+<pre><code class="lang-js">    TuyaSceneApi.getCityListByCountryCode({ countryCode: <span class="hljs-string">&quot;cn&quot;</span> })
+      .then(data =&gt; {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;---&gt;getcontry&quot;</span>, data);
 
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String errorCode, String errorMessage)</span> </span>{
-        }
-});
+      })
+      .catch(err =&gt; {
+        <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&quot;---&gt;err&quot;</span>, err);
+      });
 </code></pre>
 <h4 id="&#x6839;&#x636E;&#x57CE;&#x5E02;id&#x83B7;&#x53D6;&#x57CE;&#x5E02;&#x4FE1;&#x606F;">&#x6839;&#x636E;&#x57CE;&#x5E02;id&#x83B7;&#x53D6;&#x57CE;&#x5E02;&#x4FE1;&#x606F;</h4>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
@@ -1138,20 +1072,11 @@ TimerRule timerRule = TimerRule.newInstance(&quot;Asia/Shanghai&quot;,&quot;0111
  * <span class="hljs-doctag">@param</span> cityId   &#x57CE;&#x5E02;id{<span class="hljs-doctag">@link</span> PlaceFacadeBean}
  * <span class="hljs-doctag">@param</span> callback &#x56DE;&#x8C03;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getCityByCityIndex</span><span class="hljs-params">(<span class="hljs-keyword">long</span> cityId, ITuyaResultCallback&lt;PlaceFacadeBean&gt; callback)</span></span>;
+ getCityByCityIndex({cityId}) <span class="hljs-comment">//number</span>
 </code></pre>
 <h4 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h4>
-<pre><code class="lang-java">TuyaHomeSdk.getSceneManagerInstance().getCityByCityIndex(
-    cityId, <span class="hljs-comment">//&#x57CE;&#x5E02;id</span>
-    <span class="hljs-keyword">new</span> ITuyaResultCallback&lt;PlaceFacadeBean&gt;() {
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(PlaceFacadeBean placeFacadeBean)</span> </span>{
-        }
-
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String errorCode, String errorMessage)</span> </span>{
-        }
-});
+<pre><code class="lang-js">TuyaSceneApi.getCityByCityIndex({cityId:<span class="hljs-string">&apos;ddsds&apos;</span>}).then(data=&gt;{}).catch(err=&gt;{
+})
 </code></pre>
 <h4 id="&#x6839;&#x636E;&#x7ECF;&#x7EAC;&#x5EA6;&#x83B7;&#x53D6;&#x57CE;&#x5E02;&#x4FE1;&#x606F;">&#x6839;&#x636E;&#x7ECF;&#x7EAC;&#x5EA6;&#x83B7;&#x53D6;&#x57CE;&#x5E02;&#x4FE1;&#x606F;</h4>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
@@ -1164,49 +1089,20 @@ TimerRule timerRule = TimerRule.newInstance(&quot;Asia/Shanghai&quot;,&quot;0111
  * <span class="hljs-doctag">@param</span> lat      &#x7EAC;&#x5EA6;
  * <span class="hljs-doctag">@param</span> callback &#x56DE;&#x8C03;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getCityByLatLng</span><span class="hljs-params">(String lon, String lat, ITuyaResultCallback&lt;PlaceFacadeBean&gt; callback)</span></span>;
+TuyaSceneApi.getCityByLatLng.({
+lon:<span class="hljs-string">&apos;&apos;</span>,
+lat:<span class="hljs-string">&apos;&apos;</span>,
+})
 </code></pre>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java">TuyaHomeSdk.getSceneManagerInstance().getCityByLatLng(
-    String.valueOf(longitude), <span class="hljs-comment">//&#x7ECF;&#x5EA6;</span>
-    String.valueOf(latitude),   <span class="hljs-comment">//&#x7EAC;&#x5EA6;</span>
-    <span class="hljs-keyword">new</span> ITuyaResultCallback&lt;PlaceFacadeBean&gt;() {
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(PlaceFacadeBean placeFacadeBean)</span> </span>{
-        }
-
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String errorCode, String errorMessage)</span> </span>{
-        }
-});
+<pre><code class="lang-java">TuyaSceneApi.getCityByLatLng.({
+lon:<span class="hljs-string">&apos;&apos;</span>,
+lat:<span class="hljs-string">&apos;&apos;</span>,
+}).then(data=&gt;{}).<span class="hljs-keyword">catch</span>(err=&gt;{
+})
 </code></pre>
 <h3 id="&#x573A;&#x666F;&#x52A8;&#x4F5C;">&#x573A;&#x666F;&#x52A8;&#x4F5C;</h3>
 <p>&#x573A;&#x666F;&#x52A8;&#x4F5C;&#x6307;&#x5F53;&#x6761;&#x4EF6;&#x89E6;&#x53D1;&#x65F6;&#x6267;&#x884C;&#x7684;&#x63A7;&#x5236;&#x8BBE;&#x5907;&#x52A8;&#x4F5C;&#x3002;&#x624B;&#x52A8;&#x573A;&#x666F;&#x53EF;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;&#x5305;&#x542B;&#x81EA;&#x52A8;&#x5316;&#x573A;&#x666F;&#x548C;&#x667A;&#x80FD;&#x8BBE;&#x5907;&#xFF0C;&#x81EA;&#x52A8;&#x5316;&#x573A;&#x666F;&#x53EF;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;&#x5305;&#x542B;&#x624B;&#x52A8;&#x573A;&#x666F;&#x3001;&#x5176;&#x4ED6;&#x81EA;&#x52A8;&#x5316;&#x573A;&#x666F;&#x548C;&#x667A;&#x80FD;&#x8BBE;&#x5907;&#x3002;&#x7528;&#x6237;&#x53EF;&#x8BBE;&#x5B9A;&#x7684;&#x4EFB;&#x52A1;&#x89C6;&#x7528;&#x6237;&#x7684;&#x8BBE;&#x5907;&#x800C;&#x5B9A;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x6BCF;&#x4E00;&#x6B3E;&#x4EA7;&#x54C1;&#x90FD;&#x652F;&#x6301;&#x573A;&#x666F;&#x3002;</p>
-<h4 id="&#x521B;&#x5EFA;&#x52A8;&#x4F5C;">&#x521B;&#x5EFA;&#x52A8;&#x4F5C;</h4>
-<h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
-<p>&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x573A;&#x666F;&#x52A8;&#x4F5C;&#x3002;</p>
-<h5 id="&#x3010;&#x65B9;&#x6CD5;&#x539F;&#x578B;&#x3011;">&#x3010;&#x65B9;&#x6CD5;&#x539F;&#x578B;&#x3011;</h5>
-<pre><code class="lang-java"><span class="hljs-comment">/**
- * &#x521B;&#x5EFA;&#x573A;&#x666F;&#x52A8;&#x4F5C;
- *
- * <span class="hljs-doctag">@param</span> devId &#x8BBE;&#x5907;id
- * <span class="hljs-doctag">@param</span> tasks &#x8981;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1; &#x683C;&#x5F0F;: { dpId: dp&#x70B9;&#x503C; }
- *                          &#x4F8B;&#xFF1A;
- *                          {
- *                              &quot;1&quot;: true,
- *                          }
- * <span class="hljs-doctag">@return</span> &#x573A;&#x666F;&#x52A8;&#x4F5C;
- */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> SceneTask <span class="hljs-title">createDpTask</span><span class="hljs-params">(@NonNull String devId, HashMap&lt;String, Object&gt; tasks)</span>
-</span></code></pre>
-<h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java">HashMap&lt;String, Object&gt; taskMap = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
-taskMap.put(<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-keyword">true</span>); <span class="hljs-comment">//&#x5F00;&#x542F;&#x8BBE;&#x5907;</span>
-SceneTask task = SceneTask.createDpTask(
-    devId,      <span class="hljs-comment">//&#x8BBE;&#x5907;id</span>
-    taskMap     <span class="hljs-comment">//&#x8BBE;&#x5907;&#x52A8;&#x4F5C;</span>
-);
-</code></pre>
 <h4 id="&#x83B7;&#x53D6;&#x6267;&#x884C;&#x52A8;&#x4F5C;&#x652F;&#x6301;&#x7684;&#x8BBE;&#x5907;&#x5217;&#x8868;">&#x83B7;&#x53D6;&#x6267;&#x884C;&#x52A8;&#x4F5C;&#x652F;&#x6301;&#x7684;&#x8BBE;&#x5907;&#x5217;&#x8868;</h4>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
 <p>&#x83B7;&#x53D6;&#x652F;&#x6301;&#x573A;&#x666F;&#x52A8;&#x4F5C;&#x7684;&#x8BBE;&#x5907;&#x5217;&#x8868;&#xFF0C; &#x7528;&#x4E8E;&#x9009;&#x62E9;&#x6DFB;&#x52A0;&#x5230;&#x8981;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;&#x4E2D;&#x3002;</p>
@@ -1216,55 +1112,41 @@ SceneTask task = SceneTask.createDpTask(
  * <span class="hljs-doctag">@param</span> homeId &#x5BB6;&#x5EAD;id
  * <span class="hljs-doctag">@param</span> callback &#x56DE;&#x8C03;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getTaskDevList</span><span class="hljs-params">(<span class="hljs-keyword">long</span> homeId, ITuyaResultCallback&lt;List&lt;DeviceBean&gt;&gt; callback)</span></span>;
+getTaskDevList({homeId:})
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF0C; <code>DeviceBean</code>&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;&#x63A5;&#x53E3;:</p>
+<p>&#x5176;&#x4E2D;&#xFF0C; <code>Device</code>&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;json&#x6570;&#x636E;&#x7C7B;&#x578B;:</p>
 <pre><code class="lang-java"><span class="hljs-comment">/**
  *  &#x83B7;&#x53D6;&#x8BBE;&#x5907;&#x540D;&#x79F0;
  * 
  * <span class="hljs-doctag">@return</span> &#x8BBE;&#x5907;&#x540D;&#x79F0;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> name;
-}
+name
 
 <span class="hljs-comment">/**
  *  &#x4EA7;&#x54C1;id
  * 
  * <span class="hljs-doctag">@return</span> &#x4EA7;&#x54C1;id
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getProductId</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> productId;
-}
+productId
 
 <span class="hljs-comment">/**
  *  &#x83B7;&#x53D6;&#x8BBE;&#x5907;id
  * 
  * <span class="hljs-doctag">@return</span> &#x8BBE;&#x5907;id
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getDevId</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> devId;
-}
+devId
 
 <span class="hljs-comment">/**
  *  &#x83B7;&#x53D6;&#x8BBE;&#x5907;&#x56FE;&#x6807;
  * 
  * <span class="hljs-doctag">@return</span> &#x56FE;&#x6807;&#x5730;&#x5740;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getIconUrl</span><span class="hljs-params">()</span> </span>{
-     <span class="hljs-keyword">return</span> iconUrl;
- }
+iconUrl
 </code></pre>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java">TuyaHomeSdk.getSceneManagerInstance().getTaskDevList(<span class="hljs-keyword">new</span> ITuyaResultCallback&lt;List&lt;DeviceBean&gt;&gt;() {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(List&lt;DeviceBean&gt; deviceBeans)</span> </span>{
-    }
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String errorCode, String errorMessage)</span> </span>{
-    }
-});
+<pre><code class="lang-js">TuyaSceneApi.getTaskDevList({homeId:<span class="hljs-string">&apos;&apos;</span>}).then(data=&gt;{
+}).catch(err=&gt;{
+})
 </code></pre>
 <h4 id="&#x6839;&#x636E;&#x8BBE;&#x5907;id&#x83B7;&#x53D6;&#x53EF;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;">&#x6839;&#x636E;&#x8BBE;&#x5907;id&#x83B7;&#x53D6;&#x53EF;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;</h4>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
@@ -1276,26 +1158,22 @@ SceneTask task = SceneTask.createDpTask(
 * <span class="hljs-doctag">@param</span> devId    &#x8BBE;&#x5907;id
 * <span class="hljs-doctag">@param</span> callback &#x56DE;&#x8C03;
 */</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getDeviceTaskOperationList</span><span class="hljs-params">(String devId, ITuyaResultCallback&lt;List&lt;TaskListBean&gt;&gt; callback)</span></span>;
+TuyaSceneApi.getDeviceTaskOperationList({devId:<span class="hljs-string">&apos;&apos;</span>})
 </code></pre>
-<p>&#x5176;&#x4E2D;, <code>TaskListBean</code>&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;&#x63A5;&#x53E3;:</p>
+<p>&#x5176;&#x4E2D;, <code>TaskList</code>&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;json&#x6570;&#x636E;&#x7C7B;&#x578B;:</p>
 <pre><code class="lang-java"><span class="hljs-comment">/**
  *  &#x83B7;&#x53D6;dp&#x70B9;&#x540D;&#x79F0;&#xFF0C; &#x7528;&#x4E8E;&#x754C;&#x9762;&#x5C55;&#x793A;
  *
  * <span class="hljs-doctag">@return</span> dp&#x70B9;&#x540D;&#x79F0;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> name;
-}
+name
 
 <span class="hljs-comment">/**
  *  &#x83B7;&#x53D6;dpId
  *
  * <span class="hljs-doctag">@return</span> dpId
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">getDpId</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> dpId;
-}
+dpId
 
 <span class="hljs-comment">/**
  *  &#x83B7;&#x53D6;&#x8BE5;dp&#x70B9;&#x53EF;&#x914D;&#x7F6E;&#x7684;&#x64CD;&#x4F5C;
@@ -1308,69 +1186,57 @@ SceneTask task = SceneTask.createDpTask(
  *
  * <span class="hljs-doctag">@return</span> 
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> HashMap&lt;Object, String&gt; <span class="hljs-title">getTasks</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> tasks;
-}
+tasks
 <span class="hljs-comment">/**
  *  &#x83B7;&#x53D6;&#x8BE5;&#x6761;&#x4EF6;&#x7684;&#x7C7B;&#x578B;bool&#x3001;value&#x3001;enum&#x7B49;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getType</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> type;
-}
+type
 </code></pre>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java">TuyaHomeSdk.getSceneManagerInstance().getTaskList(
-    devId, <span class="hljs-comment">//&#x8BBE;&#x5907;id</span>
-    <span class="hljs-keyword">new</span> ITuyaResultCallback&lt;List&lt;TaskListBean&gt;&gt;() {
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(List&lt;TaskListBean&gt; conditionActionBeans)</span> </span>{
-        }
-
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String errorCode, String errorMessage)</span> </span>{
-        }
-});
+<pre><code class="lang-java">TuyaSceneApi.getDeviceTaskOperationList({devId:<span class="hljs-string">&apos;&apos;</span>}).then(data=&gt;{
+}).<span class="hljs-keyword">catch</span>(err=&gt;{
+})
 </code></pre>
 <h3 id="&#x521B;&#x5EFA;&#x573A;&#x666F;">&#x521B;&#x5EFA;&#x573A;&#x666F;</h3>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
 <p>&#x7528;&#x4E8E;&#x5C06;&#x6761;&#x4EF6;&#x548C;&#x52A8;&#x4F5C;&#x7EC4;&#x88C5;&#x6210;&#x573A;&#x666F;&#x5E76;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x573A;&#x666F;&#xFF0C; &#x6210;&#x529F;&#x540E;&#x4F1A;&#x8FD4;&#x56DE;&#x573A;&#x666F;&#x6570;&#x636E;&#x3002;
 &#x4E24;&#x79CD;&#x521B;&#x5EFA;&#x65B9;&#x6CD5;&#xFF0C;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x6D82;&#x9E26;&#x7684;&#x573A;&#x666F;&#x548C;&#x81EA;&#x52A8;&#x5316; &#x4E00;&#x4E2A;&#x6CA1;&#x5E26;&#x6761;&#x4EF6;conditionList&#xFF0C;&#x4E00;&#x4E2A;&#x6709;&#x5E26;conditionList</p>
 <h5 id="&#x3010;&#x65B9;&#x6CD5;&#x539F;&#x578B;&#x3011;">&#x3010;&#x65B9;&#x6CD5;&#x539F;&#x578B;&#x3011;</h5>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre><code class="lang-js"><span class="hljs-comment">/**
  * &#x521B;&#x5EFA;&#x573A;&#x666F;
  *
- * <span class="hljs-doctag">@param</span> homeId      &#x5BB6;&#x5EAD;id
- * <span class="hljs-doctag">@param</span> name       &#x573A;&#x666F;&#x540D;&#x79F0;
- * <span class="hljs-doctag">@param</span> stickyOnTop &#x662F;&#x5426;&#x663E;&#x793A;&#x5728;&#x9996;&#x9875;
- * <span class="hljs-doctag">@param</span> devIds &#x8BBE;&#x5907;&#x5217;&#x8868;
- * <span class="hljs-doctag">@param</span> conditions &#x573A;&#x666F;&#x89E6;&#x53D1;&#x6761;&#x4EF6; {<span class="hljs-doctag">@link</span> SceneCondition}
- * <span class="hljs-doctag">@param</span> tasks      ActionList {<span class="hljs-doctag">@link</span> SceneTask}
- * <span class="hljs-doctag">@param</span> matchType  &#x573A;&#x666F;&#x6761;&#x4EF6;&#x4E0E;&#x6216;&#x5173;&#x7CFB;  SceneBean.MATCH_TYPE_OR &#x8868;&#x793A;&#x6EE1;&#x8DB3;&#x4EFB;&#x610F;&#x6761;&#x4EF6;&#x6267;&#x884C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#xFF1B;SceneBean.MATCH_TYPE_AND &#x8868;&#x793A;&#x6EE1;&#x8DB3;&#x6240;&#x6709;&#x6761;&#x4EF6;
+ * @param homeId      &#x5BB6;&#x5EAD;id
+ * @param name       &#x573A;&#x666F;&#x540D;&#x79F0;
+ * @param stickyOnTop &#x662F;&#x5426;&#x663E;&#x793A;&#x5728;&#x9996;&#x9875;
+ * @param devIds &#x8BBE;&#x5907;&#x5217;&#x8868;
+ * @param conditions &#x573A;&#x666F;&#x89E6;&#x53D1;&#x6761;&#x4EF6; {@link SceneCondition}
+ * @param tasks      ActionList {@link SceneTask}
+ * @param matchType  &#x573A;&#x666F;&#x6761;&#x4EF6;&#x4E0E;&#x6216;&#x5173;&#x7CFB;  SceneBean.MATCH_TYPE_OR &#x8868;&#x793A;&#x6EE1;&#x8DB3;&#x4EFB;&#x610F;&#x6761;&#x4EF6;&#x6267;&#x884C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#xFF1B;SceneBean.MATCH_TYPE_AND &#x8868;&#x793A;&#x6EE1;&#x8DB3;&#x6240;&#x6709;&#x6761;&#x4EF6;
  */</span>
   TuyaSceneApi.createScene({
               homeId: <span class="hljs-string">&apos;&apos;</span>,
               name: <span class="hljs-keyword">this</span>.state.name,
-              stickyOnTop: <span class="hljs-keyword">false</span>,
+              stickyOnTop: <span class="hljs-literal">false</span>,
               devIds: devLists,
               background: <span class="hljs-string">&quot;a&quot;</span>,
               matchType: <span class="hljs-string">&quot;MATCH_TYPE_OR&quot;</span>,
               tasks: ActionLists
             })
 </code></pre>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre><code class="lang-js"><span class="hljs-comment">/**
  * &#x521B;&#x5EFA;&#x573A;&#x666F;
  *
- * <span class="hljs-doctag">@param</span> homeId      &#x5BB6;&#x5EAD;id
- * <span class="hljs-doctag">@param</span> name       &#x573A;&#x666F;&#x540D;&#x79F0;
- * <span class="hljs-doctag">@param</span> conditions &#x573A;&#x666F;&#x89E6;&#x53D1;&#x6761;&#x4EF6; {<span class="hljs-doctag">@link</span> SceneCondition}
- * <span class="hljs-doctag">@param</span> tasks      &#x573A;&#x666F;&#x6267;&#x884C;&#x4EFB;&#x52A1; {<span class="hljs-doctag">@link</span> SceneTask}
- * <span class="hljs-doctag">@param</span> matchType  &#x573A;&#x666F;&#x6761;&#x4EF6;&#x4E0E;&#x6216;&#x5173;&#x7CFB;  SceneBean.MATCH_TYPE_OR &#x8868;&#x793A;&#x6EE1;&#x8DB3;&#x4EFB;&#x610F;&#x6761;&#x4EF6;&#x6267;&#x884C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#xFF1B;SceneBean.MATCH_TYPE_AND &#x8868;&#x793A;&#x6EE1;&#x8DB3;&#x6240;&#x6709;&#x6761;&#x4EF6;
- * <span class="hljs-doctag">@param</span> callback   &#x56DE;&#x8C03;
+ * @param homeId      &#x5BB6;&#x5EAD;id
+ * @param name       &#x573A;&#x666F;&#x540D;&#x79F0;
+ * @param conditions &#x573A;&#x666F;&#x89E6;&#x53D1;&#x6761;&#x4EF6; {@link SceneCondition}
+ * @param tasks      &#x573A;&#x666F;&#x6267;&#x884C;&#x4EFB;&#x52A1; {@link SceneTask}
+ * @param matchType  &#x573A;&#x666F;&#x6761;&#x4EF6;&#x4E0E;&#x6216;&#x5173;&#x7CFB;  SceneBean.MATCH_TYPE_OR &#x8868;&#x793A;&#x6EE1;&#x8DB3;&#x4EFB;&#x610F;&#x6761;&#x4EF6;&#x6267;&#x884C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#xFF1B;SceneBean.MATCH_TYPE_AND &#x8868;&#x793A;&#x6EE1;&#x8DB3;&#x6240;&#x6709;&#x6761;&#x4EF6;
+ * @param callback   &#x56DE;&#x8C03;
  */</span>
     TuyaSceneApi.createAutoScene({
               homeId: <span class="hljs-string">&quot;&quot;</span>,
               name: <span class="hljs-keyword">this</span>.state.name,
-              stickyOnTop: <span class="hljs-keyword">false</span>,
+              stickyOnTop: <span class="hljs-literal">false</span>,
               devIds: devLists,
               background: <span class="hljs-string">&quot;a&quot;</span>,
               matchType: <span class="hljs-string">&quot;MATCH_TYPE_OR&quot;</span>,
@@ -1454,26 +1320,17 @@ TuyaHomeSdk.newSceneInstance(sceneId).modifyScene(
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
 <p>&#x7528;&#x4E8E;&#x6267;&#x884C;&#x624B;&#x52A8;&#x573A;&#x666F;&#x3002;</p>
 <h5 id="&#x3010;&#x65B9;&#x6CD5;&#x539F;&#x578B;&#x3011;">&#x3010;&#x65B9;&#x6CD5;&#x539F;&#x578B;&#x3011;</h5>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre><code class="lang-js"><span class="hljs-comment">/**
  * &#x6267;&#x884C;&#x573A;&#x666F;&#x52A8;&#x4F5C;
  *
- * <span class="hljs-doctag">@param</span> callback &#x56DE;&#x8C03;
+ * @param callback &#x56DE;&#x8C03;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">executeScene</span><span class="hljs-params">(IResultCallback callback)</span></span>;
+executeScene({sceneId:<span class="hljs-string">&apos;&apos;</span>})
 </code></pre>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java">String sceneId = sceneBean.getId();  
-
-TuyaHomeSdk.newSceneInstance(sceneId).executeScene(<span class="hljs-keyword">new</span> IResultCallback() {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">()</span> </span>{
-        Log.d(TAG, <span class="hljs-string">&quot;Excute Scene Success&quot;</span>);
-    }
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String errorCode, String errorMessage)</span> </span>{
-    }
-});
+<pre><code class="lang-js">TuyaSceneApi.executeScene({sceneId:<span class="hljs-string">&apos;&apos;</span>}).then(data=&gt;{
+}).catch(err=&gt;{
+})
 </code></pre>
 <h3 id="&#x5220;&#x9664;&#x573A;&#x666F;">&#x5220;&#x9664;&#x573A;&#x666F;</h3>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
@@ -1484,22 +1341,12 @@ TuyaHomeSdk.newSceneInstance(sceneId).executeScene(<span class="hljs-keyword">ne
  *
  * <span class="hljs-doctag">@param</span> callback &#x56DE;&#x8C03;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteScene</span><span class="hljs-params">(IResultCallback callback)</span></span>;
+TuyaSceneApi.deleteScene({sceneId:<span class="hljs-string">&apos;123123&apos;</span>})
 </code></pre>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java">String sceneId = sceneBean.getId();  
-
-TuyaHomeSdk.newSceneInstance(sceneId).deleteScene(<span class="hljs-keyword">new</span> 
-IResultCallback() {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">()</span> </span>{
-        Log.d(TAG, <span class="hljs-string">&quot;Delete Scene Success&quot;</span>);
-    }
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String errorCode, String errorMessage)</span> </span>{
-    }
-});
+<pre><code class="lang-js">TuyaSceneApi.deleteScene({sceneId:<span class="hljs-string">&apos;123123&apos;</span>}).then(data=&gt;{
+}).catch(err=&gt;{
+})
 </code></pre>
 <h3 id="&#x5F00;&#x542F;&#x5173;&#x95ED;&#x81EA;&#x52A8;&#x5316;&#x573A;&#x666F;">&#x5F00;&#x542F;&#x5173;&#x95ED;&#x81EA;&#x52A8;&#x5316;&#x573A;&#x666F;</h3>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
@@ -1510,75 +1357,48 @@ IResultCallback() {
  * <span class="hljs-doctag">@param</span> sceneId  
  * <span class="hljs-doctag">@param</span> callback &#x56DE;&#x8C03;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">enableScene</span><span class="hljs-params">(String sceneId, <span class="hljs-keyword">final</span> IResultCallback callback)</span></span>;
+
+enableScene({sceneId:<span class="hljs-string">&apos;&apos;</span>})
 </code></pre>
 <pre><code class="lang-java"><span class="hljs-comment">/**
  * &#x5173;&#x95ED;&#x81EA;&#x52A8;&#x5316;&#x573A;&#x666F;
  * <span class="hljs-doctag">@param</span> sceneId  
  * <span class="hljs-doctag">@param</span> callback &#x56DE;&#x8C03;
  */</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">disableScene</span><span class="hljs-params">(String sceneId, <span class="hljs-keyword">final</span> IResultCallback callback)</span></span>;
+TuyaSceneApi.disableScene({sceneId:<span class="hljs-string">&apos;123123&apos;</span>}).then(data=&gt;{
+}).<span class="hljs-keyword">catch</span>(err=&gt;{
+})
 </code></pre>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java">String sceneId = sceneBean.getId();  
+<pre><code class="lang-js">TuyaSceneApi.enableScene({sceneId:<span class="hljs-string">&apos;123123&apos;</span>}).then(data=&gt;{
+}).catch(err=&gt;{
+})
 
-TuyaHomeSdk.newSceneInstance(sceneId).enableScene(sceneId,<span class="hljs-keyword">new</span> 
-IResultCallback() {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">()</span> </span>{
-        Log.d(TAG, <span class="hljs-string">&quot;enable Scene Success&quot;</span>);
-    }
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String errorCode, String errorMessage)</span> </span>{
-    }
-});
-
-TuyaHomeSdk.newSceneInstance(sceneId).disableScene(sceneId,<span class="hljs-keyword">new</span> 
-IResultCallback() {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">()</span> </span>{
-        Log.d(TAG, <span class="hljs-string">&quot;disable Scene Success&quot;</span>);
-    }
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String errorCode, String errorMessage)</span> </span>{
-    }
-});
+TuyaSceneApi.disableScene({sceneId:<span class="hljs-string">&apos;123123&apos;</span>}).then(data=&gt;{
+}).catch(err=&gt;{
+})
 </code></pre>
 <h3 id="&#x573A;&#x666F;&#x6392;&#x5E8F;">&#x573A;&#x666F;&#x6392;&#x5E8F;</h3>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
 <p>&#x624B;&#x52A8;&#x573A;&#x666F;&#x6216;&#x81EA;&#x52A8;&#x5316;&#x573A;&#x666F;&#x6392;&#x5E8F;&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x53EA;&#x80FD;&#x5355;&#x72EC;&#x5BF9;&#x624B;&#x52A8;&#x573A;&#x666F;&#x6216;&#x81EA;&#x52A8;&#x5316;&#x573A;&#x666F;&#x6392;&#x5E8F;&#xFF0C;&#x4E0D;&#x80FD;&#x6DF7;&#x6392;&#x3002;</p>
 <h5 id="&#x3010;&#x65B9;&#x6CD5;&#x539F;&#x578B;&#x3011;">&#x3010;&#x65B9;&#x6CD5;&#x539F;&#x578B;&#x3011;</h5>
-<pre><code class="lang-java"><span class="hljs-comment">/**
+<pre><code class="lang-java">/**
  * &#x573A;&#x666F;&#x6392;&#x5E8F;
- * <span class="hljs-doctag">@param</span> homeId &#x5BB6;&#x5EAD;id
- * <span class="hljs-doctag">@param</span> sceneIds &#x624B;&#x52A8;&#x573A;&#x666F;&#x6216;&#x81EA;&#x52A8;&#x5316;&#x573A;&#x666F;&#x5DF2;&#x6392;&#x5E8F;&#x597D;&#x7684;&#x7684;id&#x5217;&#x8868;
- * <span class="hljs-doctag">@param</span> callback    &#x56DE;&#x8C03;
- */</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sortSceneList</span><span class="hljs-params">(<span class="hljs-keyword">long</span> homeId, List&lt;String&gt; sceneIds, IResultCallback callback)</span>
-</span></code></pre>
+ * @param homeId &#x5BB6;&#x5EAD;id
+ * @param sceneIds &#x624B;&#x52A8;&#x573A;&#x666F;&#x6216;&#x81EA;&#x52A8;&#x5316;&#x573A;&#x666F;&#x5DF2;&#x6392;&#x5E8F;&#x597D;&#x7684;&#x7684;id&#x5217;&#x8868;
+ * @param callback    &#x56DE;&#x8C03;
+ */
+TuyaSceneApi.sortSceneList({homeId:123123,sceneIds:[&apos;123&apos;,&apos;456]})
+</code></pre>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java">TuyaHomeSdk.getSceneManagerInstance().sortSceneList(
-    homeId, <span class="hljs-comment">//&#x5BB6;&#x5EAD;&#x5217;&#x8868;</span>
-    sceneIds,<span class="hljs-comment">//&#x573A;&#x666F;id&#x5217;&#x8868;</span>
-    <span class="hljs-keyword">new</span> IResultCallback() {
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">()</span> </span>{
-        }
-
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String errorCode, String errorMessage)</span> </span>{
-        }
-});
+<pre><code class="lang-java">TuyaSceneApi.sortSceneList({homeId:123123,sceneIds:[&apos;123&apos;,&apos;456]}).then(data=&gt;{}).catch(err=&gt;{
+})
 </code></pre>
 <h3 id="&#x9500;&#x6BC1;">&#x9500;&#x6BC1;</h3>
 <h5 id="&#x3010;&#x63CF;&#x8FF0;&#x3011;">&#x3010;&#x63CF;&#x8FF0;&#x3011;</h5>
 <p>&#x5982;&#x679C;&#x9000;&#x51FA;&#x573A;&#x666F;&#x7684;activity&#xFF0C;&#x5E94;&#x8BE5;&#x8C03;&#x7528;&#x573A;&#x666F;&#x7684;&#x9500;&#x6BC1;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x56DE;&#x6536;&#x5185;&#x5B58;&#xFF0C;&#x63D0;&#x5347;&#x4F53;&#x9A8C;</p>
 <h5 id="&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;">&#x3010;&#x4EE3;&#x7801;&#x8303;&#x4F8B;&#x3011;</h5>
-<pre><code class="lang-java">TuyaHomeSdk.getSceneManagerInstance().onDestroy();
-
-TuyaHomeSdk.newSceneInstance(sceneId).onDestroy();
+<pre><code class="lang-js">TuyaSceneApi.onDestroy()
 </code></pre>
 <h2 id=""> </h2>
 
@@ -1620,7 +1440,7 @@ TuyaHomeSdk.newSceneInstance(sceneId).onDestroy();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"智能场景","level":"1.13.1","depth":2,"next":{"title":"消息中心","level":"1.14","depth":1,"path":"resource/Message.md","ref":"./resource/Message.md","articles":[]},"previous":{"title":"智能场景","level":"1.13","depth":1,"ref":"","articles":[{"title":"智能场景","level":"1.13.1","depth":2,"path":"resource/SmartScene_Manager.md","ref":"./resource/SmartScene_Manager.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"resource/SmartScene_Manager.md","mtime":"2018-12-21T06:58:48.482Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-22T06:42:01.386Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"智能场景","level":"1.13.1","depth":2,"next":{"title":"消息中心","level":"1.14","depth":1,"path":"resource/Message.md","ref":"./resource/Message.md","articles":[]},"previous":{"title":"智能场景","level":"1.13","depth":1,"ref":"","articles":[{"title":"智能场景","level":"1.13.1","depth":2,"path":"resource/SmartScene_Manager.md","ref":"./resource/SmartScene_Manager.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"resource/SmartScene_Manager.md","mtime":"2018-12-25T02:42:05.298Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T02:19:39.061Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,9 +1,9 @@
 ### 家庭成员管理类
 ### 调用API
-import TuyaHomeMemberApi from './api/TuyaHomeMemberApi'
+#### `import TuyaHomeMemberApi from './api/TuyaHomeMemberApi'`
 
-ITuyaHomeMember提供了家庭成员管理接口，包括添加、删除成员，更新成员的控制权限、获取家庭成员列表等.调用方式:`TuyaHomeMemberApi`(目前如果调用添加成员，此方法传参可传0，将在下个版本优化初始化和调用逻辑).家庭成员管理逻辑主要提供MemberBean用于获取成员信息的接口
-```js 数据类型
+TuyaHomeMemberApi提供了家庭成员管理接口，包括添加、删除成员，更新成员的控制权限、获取家庭成员列表等.调用方式:`TuyaHomeMemberApi`(目前如果调用添加成员，此方法传参可传0，将在下个版本优化初始化和调用逻辑).家庭成员管理逻辑主要提供MemberBean用于获取成员信息的接口
+```javascript 数据类型
 	homeId; //家庭id
    nickName;//备注名
    admin;//是否是管理员
@@ -15,7 +15,7 @@ ITuyaHomeMember提供了家庭成员管理接口，包括添加、删除成员�
 
 #### Home下面添加成员
 
-```js
+```javascript
     /**
      * 给这个Home下面添加成员
      *
@@ -37,7 +37,7 @@ ITuyaHomeMember提供了家庭成员管理接口，包括添加、删除成员�
 
 #### 移除Home下面的成员
 
-```js
+```javascript
    /**
      * 移除Home下面的成员
      *
@@ -50,7 +50,7 @@ ITuyaHomeMember提供了家庭成员管理接口，包括添加、删除成员�
 ```
 
 #### 更新成员备注名和权限
-```js
+```javascript
 /**
  * 更新成员备注名和权限
  * @param name 备注名 如果不更改备注名，传入从memberBean获取的nickName
@@ -66,7 +66,7 @@ TuyaHomeMemberApi.updateMember({
 
 #### 查询Home下面的成员列表
 
-```js
+```javascript
    /**
      * 查询Home下面的成员列表
      *

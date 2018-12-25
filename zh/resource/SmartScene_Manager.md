@@ -1,7 +1,7 @@
 ## 智能
 
 ### 调用API
-import TuyaSceneApi from './api/TuyaSceneApi'
+#### `import TuyaSceneApi from './api/TuyaSceneApi'`
 
 ### 简介
 
@@ -21,7 +21,7 @@ import TuyaSceneApi from './api/TuyaSceneApi'
 获取场景列表，当场景首页初始化时使用。
 ##### 【方法原型】
 
-```java
+```js
 /**
  * 获取场景列表
  * @param homeId 家庭Id
@@ -70,7 +70,7 @@ TuyaSceneApi.getSceneList({
 }).then(data=>{}).catch(e=>{})
 ```
 
-### 自动化条件
+### 自动化条件                ---contionLists
 
 用户可设置的条件包括天气状况、设备状况、定时。
 ​	
@@ -98,44 +98,7 @@ TuyaSceneApi.getSceneList({
 	  注: PlaceFacade类对象请从[获取城市列表](####10.2.4),[根据经纬度获取城市](####10.2.6), [根据城市id获取城市](####10.2.5)接口获取。
 	​      目前获取城市接口只支持国内。
 
-- 设备型
-
-	设备条件是指当一个设备处于某种状态时，会触发另一台或多台设备的预定任务。<strong>为了避免循环控制，同一台设备无法同时作为条件和任务。</strong>
-
-	```java
-	  /**
-	   * 创建设备型条件
-	   *
-	   * @param devBean 条件设备
-	   * @param dpId    条件dpId
-	   * @param rule    条件规则
-	   * @return
-	   */
-	  public static SceneCondition createDevCondition(
-	      SceneDevBean devBean,
-	      String dpId,
-	      Rule rule) 
-	```
-
-	  注: SceneDevBean类对象请从[获取条件设备列表](####10.2.2)接口获取。
-
-- 定时
-
-	定时指到达指定时间执行预定任务  
-
-	```js
-	/**
-	  * 创建定时条件
-	  * @param display 用于展示的用户选定的时间条件
-	  * @param name  定时条件的名称
-	  * @param type  条件类型
-	  * @param rule  条件规则
-	  * @return
-	  */
-	  public static SceneCondition createTimerCondition(String display,String name,String type,Rule rule)
-	
-	```
-
+-
 rule-条件规则有四种规则:
 ​	
 
@@ -487,10 +450,10 @@ TuyaHomeSdk.getSceneManagerInstance().getDeviceConditionOperationList(
  * @param countryCode 国家码
  * @param callback    回调
  */
-void getCityListByCountryCode(String countryCode, ITuyaResultCallback<List<PlaceFacadeBean>> callback);
+TuyaSceneApi.getCityListByCountryCode(countryCode: "cn")
 ```
 
-其中, `PlaceFacadeBean`类提供以下接口:
+其中, `Place`jsonbean如下:
 
 ```java
 /**
@@ -498,52 +461,41 @@ void getCityListByCountryCode(String countryCode, ITuyaResultCallback<List<Place
  *
  * @return 区域名称
  */
-public String getArea() {
-    return area;
-}
+area
 
 /**
  * 获取省份名称
  *
  * @return 省份名称
  */
-public String getProvince() {
-    return province;
-}
+province
 
 /**
  * 获取城市名称
  *
  * @return 城市名称
  */
-public String getCity() {
-    return city;
-}
+city
 
 /**
  * 获取城市id
  *
  * @return 城市id
  */
-public long getCityId() {
-    return cityId;
-}
+cityId
 ```
 
 ##### 【代码范例】
 
-```java
-TuyaHomeSdk.getSceneManagerInstance().getCityListByCountryCode(
-	"cn",  //中国
-	new ITuyaResultCallback<List<PlaceFacadeBean>>() {
-    	@Override
-    	public void onSuccess(List<PlaceFacadeBean> placeFacadeBeans) {
-    	}
-
-    	@Override
-    	public void onError(String errorCode, String errorMessage) {
-    	}
-});
+```js
+    TuyaSceneApi.getCityListByCountryCode({ countryCode: "cn" })
+      .then(data => {
+        console.log("--->getcontry", data);
+     
+      })
+      .catch(err => {
+        console.warn("--->err", err);
+      });
 ```
 
 #### 根据城市id获取城市信息
@@ -561,23 +513,14 @@ TuyaHomeSdk.getSceneManagerInstance().getCityListByCountryCode(
  * @param cityId   城市id{@link PlaceFacadeBean}
  * @param callback 回调
  */
-void getCityByCityIndex(long cityId, ITuyaResultCallback<PlaceFacadeBean> callback);
+ getCityByCityIndex({cityId}) //number    
 ```
 
 #### 【代码范例】
 
-```java
-TuyaHomeSdk.getSceneManagerInstance().getCityByCityIndex(
-	cityId, //城市id
-	new ITuyaResultCallback<PlaceFacadeBean>() {
-		@Override
-		public void onSuccess(PlaceFacadeBean placeFacadeBean) {
-		}
-
-		@Override
-		public void onError(String errorCode, String errorMessage) {
-		}
-});
+```js
+TuyaSceneApi.getCityByCityIndex({cityId:'ddsds'}).then(data=>{}).catch(err=>{
+})
 ```
 
 #### 根据经纬度获取城市信息
@@ -596,64 +539,26 @@ TuyaHomeSdk.getSceneManagerInstance().getCityByCityIndex(
  * @param lat      纬度
  * @param callback 回调
  */
-void getCityByLatLng(String lon, String lat, ITuyaResultCallback<PlaceFacadeBean> callback);
+TuyaSceneApi.getCityByLatLng.({
+lon:'',
+lat:'',
+})
 ```
 
 ##### 【代码范例】
 
 ```java
-TuyaHomeSdk.getSceneManagerInstance().getCityByLatLng(
-    String.valueOf(longitude), //经度
-    String.valueOf(latitude),   //纬度
-    new ITuyaResultCallback<PlaceFacadeBean>() {
-        @Override
-        public void onSuccess(PlaceFacadeBean placeFacadeBean) {
-        }
-
-        @Override
-        public void onError(String errorCode, String errorMessage) {
-        }
-});
+TuyaSceneApi.getCityByLatLng.({
+lon:'',
+lat:'',
+}).then(data=>{}).catch(err=>{
+})
 ```
 
 ### 场景动作
 
 场景动作指当条件触发时执行的控制设备动作。手动场景可执行的动作包含自动化场景和智能设备，自动化场景可执行的动作包含手动场景、其他自动化场景和智能设备。用户可设定的任务视用户的设备而定，请注意，并不是每一款产品都支持场景。
 
-#### 创建动作
-
-##### 【描述】
-
-用于创建场景动作。
-
-##### 【方法原型】
-
-```java
-/**
- * 创建场景动作
- *
- * @param devId 设备id
- * @param tasks 要执行的任务 格式: { dpId: dp点值 }
- *                          例：
- *                          {
- *                              "1": true,
- *                          }
- * @return 场景动作
- */
-public static SceneTask createDpTask(@NonNull String devId, HashMap<String, Object> tasks)
-
-```
-
-##### 【代码范例】
-
-```java
-HashMap<String, Object> taskMap = new HashMap<>();
-taskMap.put("1", true); //开启设备
-SceneTask task = SceneTask.createDpTask(
-    devId,      //设备id
-    taskMap     //设备动作
-);
-```
 
 #### 获取执行动作支持的设备列表
 
@@ -669,10 +574,10 @@ SceneTask task = SceneTask.createDpTask(
  * @param homeId 家庭id
  * @param callback 回调
  */
-void getTaskDevList(long homeId, ITuyaResultCallback<List<DeviceBean>> callback);
+getTaskDevList({homeId:})
 ```
 
-其中， `DeviceBean `提供以下接口:
+其中， `Device `提供以下json数据类型:
 
 ```java
 /**
@@ -680,50 +585,36 @@ void getTaskDevList(long homeId, ITuyaResultCallback<List<DeviceBean>> callback)
  * 
  * @return 设备名称
  */
-public String getName() {
-    return name;
-}
+name
 
 /**
  *  产品id
  * 
  * @return 产品id
  */
-public String getProductId() {
-    return productId;
-}
+productId
 
 /**
  *  获取设备id
  * 
  * @return 设备id
  */
-public String getDevId() {
-    return devId;
-}
+devId
 
 /**
  *  获取设备图标
  * 
  * @return 图标地址
  */
-public String getIconUrl() {
-     return iconUrl;
- }
+iconUrl
 ```
 
 ##### 【代码范例】
 
-```java
-TuyaHomeSdk.getSceneManagerInstance().getTaskDevList(new ITuyaResultCallback<List<DeviceBean>>() {
-    @Override
-    public void onSuccess(List<DeviceBean> deviceBeans) {
-    }
-
-    @Override
-    public void onError(String errorCode, String errorMessage) {
-    }
-});
+```js
+TuyaSceneApi.getTaskDevList({homeId:''}).then(data=>{
+}).catch(err=>{
+})
 ```
 
 #### 根据设备id获取可执行的动作
@@ -741,10 +632,10 @@ TuyaHomeSdk.getSceneManagerInstance().getTaskDevList(new ITuyaResultCallback<Lis
 * @param devId    设备id
 * @param callback 回调
 */
-void getDeviceTaskOperationList(String devId, ITuyaResultCallback<List<TaskListBean>> callback);
+TuyaSceneApi.getDeviceTaskOperationList({devId:''})
 ```
 
-其中, `TaskListBean`提供以下接口:
+其中, `TaskList`提供以下json数据类型:
 
 ```java
 /**
@@ -752,18 +643,14 @@ void getDeviceTaskOperationList(String devId, ITuyaResultCallback<List<TaskListB
  *
  * @return dp点名称
  */
-public String getName() {
-    return name;
-}
+name
 
 /**
  *  获取dpId
  *
  * @return dpId
  */
-public long getDpId() {
-    return dpId;
-}
+dpId
 
 /**
  *  获取该dp点可配置的操作
@@ -776,32 +663,20 @@ public long getDpId() {
  *
  * @return 
  */
-public HashMap<Object, String> getTasks() {
-    return tasks;
-}
+tasks
 /**
  *  获取该条件的类型bool、value、enum等
  */
-public String getType() {
-    return type;
-}
+type
 
 ```
 
 ##### 【代码范例】
 
 ```java
-TuyaHomeSdk.getSceneManagerInstance().getTaskList(
-    devId, //设备id
-    new ITuyaResultCallback<List<TaskListBean>>() {
-        @Override
-        public void onSuccess(List<TaskListBean> conditionActionBeans) {
-        }
-
-        @Override
-        public void onError(String errorCode, String errorMessage) {
-        }
-});
+TuyaSceneApi.getDeviceTaskOperationList({devId:''}).then(data=>{
+}).catch(err=>{
+})
 ```
 
 ### 创建场景
@@ -813,7 +688,7 @@ TuyaHomeSdk.getSceneManagerInstance().getTaskList(
 
 ##### 【方法原型】
 
-```java
+```js
 /**
  * 创建场景
  *
@@ -836,7 +711,7 @@ TuyaHomeSdk.getSceneManagerInstance().getTaskList(
             })
 ```
 
-```java
+```js
 /**
  * 创建场景
  *
@@ -953,30 +828,21 @@ TuyaHomeSdk.newSceneInstance(sceneId).modifyScene(
 
 ##### 【方法原型】
 
-```java
+```js
 /**
  * 执行场景动作
  *
  * @param callback 回调
  */
-void executeScene(IResultCallback callback);
+executeScene({sceneId:''})
 ```
 
 ##### 【代码范例】
 
-```java
-String sceneId = sceneBean.getId();  
-
-TuyaHomeSdk.newSceneInstance(sceneId).executeScene(new IResultCallback() {
-    @Override
-    public void onSuccess() {
-        Log.d(TAG, "Excute Scene Success");
-    }
-
-    @Override
-    public void onError(String errorCode, String errorMessage) {
-    }
-});
+```js
+TuyaSceneApi.executeScene({sceneId:''}).then(data=>{
+}).catch(err=>{
+})
 ```
 
 ### 删除场景
@@ -993,25 +859,15 @@ TuyaHomeSdk.newSceneInstance(sceneId).executeScene(new IResultCallback() {
  *
  * @param callback 回调
  */
-void deleteScene(IResultCallback callback);
+TuyaSceneApi.deleteScene({sceneId:'123123'})
 ```
 
 ##### 【代码范例】
 
-```java
-String sceneId = sceneBean.getId();  
-
-TuyaHomeSdk.newSceneInstance(sceneId).deleteScene(new 
-IResultCallback() {
-    @Override
-    public void onSuccess() {
-        Log.d(TAG, "Delete Scene Success");
-    }
-
-    @Override
-    public void onError(String errorCode, String errorMessage) {
-    }
-});
+```js
+TuyaSceneApi.deleteScene({sceneId:'123123'}).then(data=>{
+}).catch(err=>{
+})
 ```
 
 ### 开启关闭自动化场景
@@ -1028,8 +884,8 @@ IResultCallback() {
  * @param sceneId  
  * @param callback 回调
  */
-void enableScene(String sceneId, final IResultCallback callback);
 
+enableScene({sceneId:''})
 ```
 
 ```java
@@ -1038,38 +894,21 @@ void enableScene(String sceneId, final IResultCallback callback);
  * @param sceneId  
  * @param callback 回调
  */
-void disableScene(String sceneId, final IResultCallback callback);
-
+TuyaSceneApi.disableScene({sceneId:'123123'}).then(data=>{
+}).catch(err=>{
+})
 ```
 
 ##### 【代码范例】
 
-```java
-String sceneId = sceneBean.getId();  
+```js
+TuyaSceneApi.enableScene({sceneId:'123123'}).then(data=>{
+}).catch(err=>{
+})
 
-TuyaHomeSdk.newSceneInstance(sceneId).enableScene(sceneId,new 
-IResultCallback() {
-    @Override
-    public void onSuccess() {
-        Log.d(TAG, "enable Scene Success");
-    }
-
-    @Override
-    public void onError(String errorCode, String errorMessage) {
-    }
-});
-
-TuyaHomeSdk.newSceneInstance(sceneId).disableScene(sceneId,new 
-IResultCallback() {
-    @Override
-    public void onSuccess() {
-        Log.d(TAG, "disable Scene Success");
-    }
-
-    @Override
-    public void onError(String errorCode, String errorMessage) {
-    }
-});
+TuyaSceneApi.disableScene({sceneId:'123123'}).then(data=>{
+}).catch(err=>{
+})
 ```
 
 ### 场景排序
@@ -1087,24 +926,14 @@ IResultCallback() {
  * @param sceneIds 手动场景或自动化场景已排序好的的id列表
  * @param callback    回调
  */
-void sortSceneList(long homeId, List<String> sceneIds, IResultCallback callback)
+TuyaSceneApi.sortSceneList({homeId:123123,sceneIds:['123','456]})
 ```
 
 ##### 【代码范例】
 
 ```java
-TuyaHomeSdk.getSceneManagerInstance().sortSceneList(
-    homeId, //家庭列表
-    sceneIds,//场景id列表
-    new IResultCallback() {
-        @Override
-        public void onSuccess() {
-        }
-
-        @Override
-        public void onError(String errorCode, String errorMessage) {
-        }
-});
+TuyaSceneApi.sortSceneList({homeId:123123,sceneIds:['123','456]}).then(data=>{}).catch(err=>{
+})
 ```
 
 ### 销毁
@@ -1115,10 +944,8 @@ TuyaHomeSdk.getSceneManagerInstance().sortSceneList(
 
 ##### 【代码范例】
 
-```java
-TuyaHomeSdk.getSceneManagerInstance().onDestroy();
-
-TuyaHomeSdk.newSceneInstance(sceneId).onDestroy();
+```js
+TuyaSceneApi.onDestroy()
 ```
 
 ## 

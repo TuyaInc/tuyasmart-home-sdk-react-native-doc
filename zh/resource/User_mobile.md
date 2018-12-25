@@ -37,16 +37,16 @@ import TuyaUserApi from './api/TuyaUserApi'
 * @param countryCode   国家区号
 * @param phoneNumber   手机号码
  TuyaUserApi.getValidateCode({
-	 countryCode: '',
-	 phoneNumber: ''}).then(data=>{}).catch(err=>{})
+	 countryCode: '86',
+	 phoneNumber: '123123'}).then(data=>{}).catch(err=>{})
 
 //手机验证码登陆
 * @param countryCode 国家区号
 * @param phone       电话
 * @param code        验证码
  TuyaUserApi.loginWithValidateCode({
-	 countryCode:'',
-	 phone:'',
+	 countryCode:'86',
+	 phone:'123123',
  }).then(data=>{}).catch(err=>{})
 ```
 ## 二、用户手机密码登陆

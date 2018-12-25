@@ -1,6 +1,6 @@
 ## 消息中心
 ### 调用API
-import TuyaMessageApi from './api/TuyaMessageApi'
+#### `import TuyaMessageApi from './api/TuyaMessageApi'`
 
 
 ### 获取消息列表

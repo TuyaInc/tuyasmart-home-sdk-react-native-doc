@@ -1,7 +1,7 @@
 ## 网关
 
 ### 调用API
-import TuyaGatewayApi from './api/TuyaGatewayApi'
+#### `import TuyaGatewayApi from './api/TuyaGatewayApi'`
 
 网关类封装了ZigBee网关的相关操作，包括控制，查询子设备，监听子设备状态等。
 可以通过GatewayNativeApi提供的相应方法去完成相关操作。
@@ -14,7 +14,7 @@ import TuyaGatewayApi from './api/TuyaGatewayApi'
 - registerSubDevListener 注册子设备信息变更
 - unRegisterSubDevListener 注销子设备信息变更
 
-```
+```javascript
 TuyaGatewayApi.publishDps({
 	devId:'',
 	localId:'',
