@@ -1,7 +1,8 @@
 ## 智能
 
 ### 调用API
-#### `import TuyaSceneApi from './api/TuyaSceneApi'`
+
+####  `import {TuyaSceneApi} from 'tuyasmart-home-sdk'`
 
 ### 简介
 

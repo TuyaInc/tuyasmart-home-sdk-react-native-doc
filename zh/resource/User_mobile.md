@@ -1,7 +1,8 @@
 # 手机账号体系
 
 ### 调用API
-import TuyaUserApi from './api/TuyaUserApi'
+
+####  `import {TuyaUserApi} from 'tuyasmart-home-sdk'`
 
 涂鸦智能提供手机验证码登陆体系。
 通过TuyaUserApi来获取相应接口

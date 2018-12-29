@@ -1,7 +1,8 @@
 # 用户uid登陆体系
 
 ### 调用API
-import TuyaUserApi from './api/TuyaUserApi'
+####  `import {TuyaUserApi} from 'tuyasmart-home-sdk'`
+
 
 涂鸦智能提供uid登陆体系。如果客户自有用户体系，那么可以通过uid登陆体系，接入我们的sdk。
 ## 一、用户uid注册

@@ -1,7 +1,7 @@
 ### 设备数据流通道
 ### 调用API
-#### `import TuyaSingleTransferApi from './api/TuyaSingleTransferApi'`
 
+####  `import {TuyaSingleTransferApi} from 'tuyasmart-home-sdk'`
 
 主要用于扫地机地图数据等大量实时上报的场景
 

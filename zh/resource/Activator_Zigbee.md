@@ -1,7 +1,8 @@
 ### ZigBee网关配网
 
 ### 调用API
-#### `import TuyaActivatorApi from './api/TuyaActivatorApi'`
+
+####  `import {TuyaActivatorApi} from 'tuyasmart-home-sdk'`
 
 ```
 这里的ZigBee网关配网是指有线配网

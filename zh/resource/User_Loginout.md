@@ -2,7 +2,8 @@
 用户相关的我们可以使用TuyaUserApi来调用相关api
 
 ### 调用API
-import TuyaUserApi from './api/TuyaUserApi'
+
+####  `import {TuyaUserApi} from 'tuyasmart-home-sdk'`
 
 **接口描述**
 

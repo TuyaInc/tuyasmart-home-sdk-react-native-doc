@@ -1,6 +1,7 @@
 ### 家庭操作类
 ### 调用API
-#### `import TuyaHomeApi from './api/TuyaHomeApi'`
+
+####  `import {TuyaHomeApi} from 'tuyasmart-home-sdk'`
 
 
 TuyaHomeApi 提供了家庭相关的操作类，负责处理家庭的数据和信息的更新。

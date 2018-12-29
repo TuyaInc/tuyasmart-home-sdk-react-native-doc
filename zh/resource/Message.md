@@ -1,7 +1,7 @@
 ## 消息中心
 ### 调用API
-#### `import TuyaMessageApi from './api/TuyaMessageApi'`
 
+####  `import {TuyaMessageApi} from 'tuyasmart-home-sdk'`
 
 ### 获取消息列表
 

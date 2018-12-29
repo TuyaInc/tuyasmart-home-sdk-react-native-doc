@@ -2,7 +2,8 @@ ITuyaActivator 集成了WiFi配网、ZigBee配网、蓝牙mesh配网等。
 
 ### WiFi配网  
 ### 调用API
-#### `import TuyaActivatorApi from './api/TuyaActivatorApi'`
+
+####  `import {TuyaActivatorApi} from 'tuyasmart-home-sdk'`
 
 ##### 【描述】
 

@@ -1,7 +1,7 @@
 ### 修改备注名
 ### 调用API
-#### `import TuyaShareApi from './api/TuyaShareApi'`
 
+####  `import {TuyaShareApi} from 'tuyasmart-home-sdk'`
 
 #### (1)修改发出的分享人的备注名
 

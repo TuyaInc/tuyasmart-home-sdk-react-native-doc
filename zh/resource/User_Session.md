@@ -7,30 +7,36 @@ Session由于可能存在一些异常或者在一段时间不操作（45天）�
 
 **接口说明**
 
-```java
-//session失效监听
-TuyaHomeSdk.setOnNeedLoginListener(INeedLoginListener needLoginListener);
+```js
+//session失效监听 在js层我们监听事件 needLogin
+
+
 ```
 **实现回调**
 
-```java
-needLoginListener.onNeedLogin(Context context);
+```js
+this.needLoginListener = RCTDeviceEventEmitter.addListener("needLogin",()=>{
+//处理相关逻辑
+})
 ```
 **代码范例**
 
 ```java
-public class TuyaSmartApp extends Application {
+import RCTDeviceEventEmitter from "RCTDeviceEventEmitter";
 
-        @Override
-        public void onCreate() {
-            super.onCreate();
-            //需要在application里面注册
-  			  TuyaHomeSdk.setOnNeedLoginListener(new INeedLoginListener() {
-     		  @Override
-      		  public void onNeedLogin(Context context) {
+componentWillMount(){
+this.needLoginListener = RCTDeviceEventEmitter.addListener("needLogin",()=>{
+//处理相关逻辑
+})
 
-      		  }
-    });
+}
+
+componentWillUnmount(){
+this.needLoginListener.remove();
+}
+
+
+
 ```
 >注意事项
 >

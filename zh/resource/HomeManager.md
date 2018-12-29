@@ -1,6 +1,7 @@
 ### 家庭管理类
 ### 调用API
-#### `import TuyaHomeManagerApi from './api/TuyaHomeManagerApi'`
+
+####  `import {TuyaHomeManagerApi} from 'tuyasmart-home-sdk'`
 
 TuyaHomeManagerApi 提供了创建家庭、获取家庭列表以及监听家庭相关的变更
 

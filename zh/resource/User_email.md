@@ -1,7 +1,8 @@
 # 用户邮箱账号体系
 涂鸦智能提供邮箱密码登陆体系。
 ### 调用API
-import TuyaUserApi from './api/TuyaUserApi'
+
+####  `import {TuyaUserApi} from 'tuyasmart-home-sdk'`
 
 ## 一、用户邮箱密码注册
 **接口描述**

@@ -1,6 +1,7 @@
 ## 设备控制
 ### 调用API
-#### `import TuyaDeviceApi from './api/TuyaDeviceApi'`
+
+####  `import {TuyaDeviceApi} from 'tuyasmart-home-sdk'`
 
 ### 设备信息获取
 

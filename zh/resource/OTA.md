@@ -1,7 +1,7 @@
 #### 固件升级
 ### 调用API
-#### `import TuyaOTAApi from './api/TuyaOTAApi'`
 
+####  `import {TuyaOTAApi} from 'tuyasmart-home-sdk'`
 
 ##### 【描述】
 我们通过上面调用api拿到TuyaOTAPi进行相关操作

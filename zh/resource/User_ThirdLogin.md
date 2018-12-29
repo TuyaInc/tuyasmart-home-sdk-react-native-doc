@@ -1,6 +1,7 @@
 #  第三方登陆
 ### 调用API
-import TuyaUserApi from './api/TuyaUserApi'
+####  `import {TuyaUserApi} from 'tuyasmart-home-sdk'`
+
 
 ## 一、Twitter登陆
 

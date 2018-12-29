@@ -1,6 +1,7 @@
 ### 添加共享
 ### 调用API
-#### `import TuyaShareApi from './api/TuyaShareApi'`
+
+####  `import {TuyaShareApi} from 'tuyasmart-home-sdk'`
 
 通过调用TuyaShareApi里的方法完成相应操作
 #### (1)添加多个设备共享（覆盖）

@@ -660,160 +660,12 @@
 &#xFF08;&#x4F8B;&#x5982; react-native init TuyaSdkTest&#xFF09;</li>
 </ol>
 <h2 id="android-&#x7BC7;&#x4ECB;&#x7ECD;">Android &#x7BC7;&#x4ECB;&#x7ECD;</h2>
-<h3 id="&#x4E00;&#x3001;&#x6253;&#x5F00;&#x5DE5;&#x7A0B;">&#x4E00;&#x3001;&#x6253;&#x5F00;&#x5DE5;&#x7A0B;</h3>
-<p>&#x7528;Android studio&#x6216;&#x8005;eclipse&#x6253;&#x5F00;&#x7B2C;&#x4E00;&#x6B65;&#x6267;&#x884C;&#x7684;react-native&#x5DE5;&#x7A0B;&#x91CC;&#x7684;android&#x5DE5;&#x7A0B;</p>
-<h3 id="&#x4E8C;&#x3001;&#x5F15;&#x5165;aar&#x5305;">&#x4E8C;&#x3001;&#x5F15;&#x5165;aar&#x5305;</h3>
-<p><img src="images/1522484439507.jpg" alt="cmd-markdown-logo"> </p>
-<h3 id="&#x4E09;&#x3001;buildgradle-&#x914D;&#x7F6E;">&#x4E09;&#x3001;build.gradle &#x914D;&#x7F6E;</h3>
-<p>&#x5728;app build.gradle &#x6587;&#x4EF6;&#x91CC;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</p>
-<pre><code class="lang-groovy">apply <span class="hljs-string">plugin:</span> <span class="hljs-string">&quot;com.android.application&quot;</span>
-apply <span class="hljs-string">plugin:</span> <span class="hljs-string">&apos;maven&apos;</span>
-<span class="hljs-keyword">import</span> com.android.build.OutputFile
-
-project.ext.react = [
-<span class="hljs-symbol">    entryFile:</span> <span class="hljs-string">&quot;index.js&quot;</span>
-]
-
-apply <span class="hljs-string">from:</span> <span class="hljs-string">&quot;../../node_modules/react-native/react.gradle&quot;</span>
-
-<span class="hljs-keyword">def</span> enableSeparateBuildPerCPUArchitecture = <span class="hljs-literal">false</span>
-<span class="hljs-keyword">def</span> enableProguardInReleaseBuilds = <span class="hljs-literal">false</span>
-
-android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
-
-    defaultConfig {
-        applicationId <span class="hljs-string">&quot;com.tuyasdktest&quot;</span>
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode <span class="hljs-number">1</span>
-        versionName <span class="hljs-string">&quot;1.0&quot;</span>
-        multiDexEnabled <span class="hljs-literal">true</span>
-        ndk {
-            abiFilters <span class="hljs-string">&quot;armeabi-v7a&quot;</span>, <span class="hljs-string">&quot;x86&quot;</span>
-        }
-    }
-    splits {
-        abi {
-            reset()
-            enable enableSeparateBuildPerCPUArchitecture
-            universalApk <span class="hljs-literal">false</span>  <span class="hljs-comment">// If true, also generate a universal APK</span>
-            include <span class="hljs-string">&quot;armeabi-v7a&quot;</span>, <span class="hljs-string">&quot;x86&quot;</span>
-        }
-    }
-    buildTypes {
-        release {
-            minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile(<span class="hljs-string">&quot;proguard-android.txt&quot;</span>), <span class="hljs-string">&quot;proguard-rules.pro&quot;</span>
-        }
-    }
-    <span class="hljs-comment">// applicationVariants are e.g. debug, release</span>
-    applicationVariants.all { variant -&gt;
-        variant.outputs.each { output -&gt;
-            <span class="hljs-comment">// For each separate APK per architecture, set a unique version code as described here:</span>
-            <span class="hljs-comment">// http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits</span>
-            <span class="hljs-keyword">def</span> versionCodes = [<span class="hljs-string">&quot;armeabi-v7a&quot;</span>:<span class="hljs-number">1</span>, <span class="hljs-string">&quot;x86&quot;</span>:<span class="hljs-number">2</span>]
-            <span class="hljs-keyword">def</span> abi = output.getFilter(OutputFile.ABI)
-            <span class="hljs-keyword">if</span> (abi != <span class="hljs-literal">null</span>) {  <span class="hljs-comment">// null for the universal-debug, universal-release variants</span>
-                output.versionCodeOverride =
-                        versionCodes.get(abi) * <span class="hljs-number">1048576</span> + defaultConfig.versionCode
-            }
-        }
-    }
-}
-
-dependencies {
-    implementation fileTree(<span class="hljs-string">dir:</span> <span class="hljs-string">&quot;libs&quot;</span>, <span class="hljs-string">include:</span> [<span class="hljs-string">&quot;*.jar&quot;</span>])
-    implementation <span class="hljs-string">&apos;com.android.support:appcompat-v7:26.1.0&apos;</span>
-    implementation <span class="hljs-string">&apos;com.android.support:multidex:1.0.1&apos;</span>
-    implementation <span class="hljs-string">&apos;com.alibaba:fastjson:1.1.68.android&apos;</span>
-    api <span class="hljs-string">&quot;org.jetbrains.kotlin:kotlin-stdlib-jre7:1.2.71&quot;</span>
-    implementation <span class="hljs-string">&quot;com.facebook.react:react-native:+&quot;</span>  <span class="hljs-comment">// From node_modules</span>
-    implementation(<span class="hljs-string">name:</span> <span class="hljs-string">&apos;tuyasmartrn-2.7.2&apos;</span>, <span class="hljs-string">ext:</span> <span class="hljs-string">&apos;aar&apos;</span>)
-    implementation(<span class="hljs-string">name:</span> <span class="hljs-string">&apos;tuyasmart-2.7.2&apos;</span>, <span class="hljs-string">ext:</span> <span class="hljs-string">&apos;aar&apos;</span>)
-}
-
-
-task copyDownloadableDepsToLibs(<span class="hljs-string">type:</span> Copy) {
-    from configurations.compile
-    into <span class="hljs-string">&apos;libs&apos;</span>
-}
-
-repositories {
-    maven {
-        <span class="hljs-comment">// All of React Native (JS, Obj-C sources, Android binaries) is installed from npm</span>
-        url <span class="hljs-string">&quot;$projectDir/../node_modules/react-native/android&quot;</span>
-    }
-    mavenCentral()
-    google()
-    flatDir {
-        dirs <span class="hljs-string">&apos;libs&apos;</span>
-    }
-}
-</code></pre>
-<blockquote>
-<p>&#x3010;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x3011;
-&#x6D82;&#x9E26;&#x667A;&#x80FD;sdk&#x9ED8;&#x8BA4;&#x53EA;&#x652F;&#x6301;armeabi-v7a&#x548C;x86&#x67B6;&#x6784;&#x7684;&#x5E73;&#x53F0;&#xFF0C;&#x5982;&#x6709;&#x5176;&#x4ED6;&#x5E73;&#x53F0;&#x9700;&#x8981;&#x53EF;&#x524D;&#x5F80;<a href="https://github.com/TuyaInc/tuyasmart_android_sdk/tree/master/library" target="_blank">GitHub</a>&#x83B7;&#x53D6;</p>
-</blockquote>
-<h3 id="&#x56DB;&#x3001;androidmanifestxml-&#x8BBE;&#x7F6E;">&#x56DB;&#x3001;AndroidManifest.xml &#x8BBE;&#x7F6E;</h3>
-<p>&#x5728;AndroidManifest.xml&#x6587;&#x4EF6;&#x91CC;&#x914D;&#x7F6E;appkey&#x548C;appSecret&#xFF0C;&#x5728;&#x914D;&#x7F6E;&#x76F8;&#x5E94;&#x7684;&#x6743;&#x9650;&#x7B49;</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span>
-<span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;TUYA_SMART_APPKEY&quot;</span>
-<span class="hljs-attr">android:value</span>=<span class="hljs-string">&quot;&#x5E94;&#x7528;id&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span>
-<span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;TUYA_SMART_SECRET&quot;</span>
-<span class="hljs-attr">android:value</span>=<span class="hljs-string">&quot;&#x5E94;&#x7528;&#x5BC6;&#x94A5;&quot;</span> /&gt;</span>
-
-&#x6DFB;&#x52A0;&#x5FC5;&#x8981;&#x7684;&#x6743;&#x9650;&#x652F;&#x6301;
-<span class="hljs-comment">&lt;!-- sdcard --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.READ_EXTERNAL_STORAGE&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.READ_PHONE_STATE&quot;</span> <span class="hljs-attr">android:required</span>=<span class="hljs-string">&quot;false&quot;</span>/&gt;</span>
-<span class="hljs-comment">&lt;!-- &#x7F51;&#x7EDC; --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.INTERNET&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CHANGE_NETWORK_STATE&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CHANGE_WIFI_STATE&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_WIFI_STATE&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.WAKE_LOCK&quot;</span><span class="hljs-string">android:required=&quot;false&quot;</span> /&gt;</span>
-<span class="hljs-comment">&lt;!-- added from 2.7.2 --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CHANGE_WIFI_MULTICAST_STATE&quot;</span> <span class="hljs-attr">android:required</span>=<span class="hljs-string">&quot;false&quot;</span>/&gt;</span>
-
-
-
-&#x6DFB;&#x52A0;&#x5FC5;&#x8981;&#x7684;service&#x548C;receiver
-//<span class="hljs-tag">&lt;<span class="hljs-name">service</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;org.eclipse.paho.android.service.MqttService&quot;</span> /&gt;</span>
-//from 2.6.3 com.tuya.smart.mqtt.MqttService replace the org.eclipse.paho.android.service.mqttservice
-    <span class="hljs-tag">&lt;<span class="hljs-name">service</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.tuya.smart.mqtt.MqttService&quot;</span> <span class="hljs-attr">android:stopWithTask</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">receiver</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.tuya.smart.android.base.broadcast.NetworkBroadcastReceiver&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.net.conn.CONNECTIVITY_CHANGE&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">receiver</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">service</span>
-<span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.tuya.smart.android.hardware.service.GwBroadcastMonitorService&quot;</span>
-<span class="hljs-attr">android:exported</span>=<span class="hljs-string">&quot;true&quot;</span>
-<span class="hljs-attr">android:label</span>=<span class="hljs-string">&quot;UDPService&quot;</span>
-<span class="hljs-attr">android:process</span>=<span class="hljs-string">&quot;:monitor&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;tuya.intent.action.udp&quot;</span> /&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">category</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;tuya&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">service</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">service</span>
-    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.tuya.smart.android.hardware.service.DevTransferService&quot;</span>
-    <span class="hljs-attr">android:label</span>=<span class="hljs-string">&quot;TCPService&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;tuya.intent.action.tcp&quot;</span> /&gt;</span>
-           <span class="hljs-tag">&lt;<span class="hljs-name">category</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;tuya&quot;</span> /&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">service</span>&gt;</span>
-</code></pre>
-<h3 id="&#x4E94;&#x3001;&#x6DF7;&#x6DC6;&#x914D;&#x7F6E;">&#x4E94;&#x3001;&#x6DF7;&#x6DC6;&#x914D;&#x7F6E;</h3>
+<h3 id="&#x4E00;&#x3001;&#x5B89;&#x88C5;">&#x4E00;&#x3001;&#x5B89;&#x88C5;</h3>
+<h4 id="1-run-npm-install-tuyasmart-home-sdk---save">1. Run <code>npm install tuyasmart-home-sdk --save</code></h4>
+<h4 id="2-react-native-link-tuyasmart-home-sdk">2. <code>react-native link tuyasmart-home-sdk</code></h4>
+<h3 id="&#x4E8C;&#x3001;&#x4F7F;&#x7528;">&#x4E8C;&#x3001;&#x4F7F;&#x7528;</h3>
+<h4 id="&#x4F8B;&#x5982;-import-tuyacoreapi-from-tuyasmart-home-sdk">&#x4F8B;&#x5982; <code>import {TuyaCoreApi} from &apos;tuyasmart-home-sdk&apos;</code></h4>
+<h3 id="&#x4E09;&#x3001;&#x6DF7;&#x6DC6;&#x914D;&#x7F6E;">&#x4E09;&#x3001;&#x6DF7;&#x6DC6;&#x914D;&#x7F6E;</h3>
 <p>&#x5728;proguard-rules.pro&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#x76F8;&#x5E94;&#x6DF7;&#x6DC6;&#x914D;&#x7F6E;</p>
 <pre><code class="lang-shell">#fastJson
 -keep class com.alibaba.fastjson.**{*;}
@@ -838,13 +690,14 @@ repositories {
 -keep class com.tuya.**{*;}
 -dontwarn com.tuya.**
 </code></pre>
-<h3 id="&#x516D;&#x3001;&#x5F15;&#x7528;tuyareactpackage">&#x516D;&#x3001;&#x5F15;&#x7528;TuyaReactPackage</h3>
-<p>&#x6253;&#x5F00;app&#x4E2D;&#x7684;MainApplication&#x7C7B;&#xFF0C;&#x6DFB;&#x52A0; new TuyaReactPackage()
-<img src="images/android-pre.png" alt="cmd-markdown-logo"> </p>
-<h3 id="&#x4E03;&#x3001;&#x6DFB;&#x52A0;tuyaapi&#x6587;&#x4EF6;&#x5939;">&#x4E03;&#x3001;&#x6DFB;&#x52A0;TuyaAPi&#x6587;&#x4EF6;&#x5939;</h3>
-<p>&#x5C06;github&#x4E0A;&#x4E0B;&#x8F7D;&#x7684;TuyaApi&#x6587;&#x4EF6;&#x5939;&#x653E;&#x5230;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x5F53;&#x4E2D;
-<img src="images/android-pre2.png" alt="cmd-markdown-logo"> </p>
-<h2 id="&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;sdk&#x529F;&#x80FD;">&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;SDK&#x529F;&#x80FD;</h2>
+<h3 id="&#x56DB;&#x3001;&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x56DB;&#x3001;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h3>
+<p>&#x5728;app&#x7684;build.gradle&#x4E2D;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;</p>
+<pre><code>repositories {
+    flatDir {
+        dirs project(&apos;:tuyasmart-home-sdk&apos;).file(&apos;libs&apos;)
+    }
+}
+</code></pre><h2 id="&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;sdk&#x529F;&#x80FD;">&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;SDK&#x529F;&#x80FD;</h2>
 <p>TuyaRNSdk &#x662F;&#x4E00;&#x5207;&#x5168;&#x5C4B;&#x667A;&#x80FD;API&#x5BF9;&#x5916;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5305;&#x542B;&#xFF1A;&#x914D;&#x7F51;&#x3001;&#x521D;&#x59CB;&#x5316;&#x3001;&#x63A7;&#x5236;&#x3001;&#x623F;&#x95F4;&#x3001;&#x7FA4;&#x7EC4;&#x3001;ZigBee&#x7B49;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
 
                                 
@@ -889,7 +742,7 @@ repositories {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"集成SDK","level":"1.4","depth":1,"next":{"title":"用户管理","level":"1.5","depth":1,"path":"resource/User.md","ref":"./resource/User.md","articles":[{"title":"1系列SDK账户迁移","level":"1.5.1","depth":2,"path":"resource/User_sdk_update.md","ref":"./resource/User_sdk_update.md","articles":[]},{"title":"手机帐号","level":"1.5.2","depth":2,"path":"resource/User_mobile.md","ref":"./resource/User_mobile.md","articles":[]},{"title":"邮箱帐号","level":"1.5.3","depth":2,"path":"resource/User_email.md","ref":"./resource/User_email.md","articles":[]},{"title":"用户uid登陆体系","level":"1.5.4","depth":2,"path":"resource/User_uid.md","ref":"./resource/User_uid.md","articles":[]},{"title":"第三方登录","level":"1.5.5","depth":2,"path":"resource/User_ThirdLogin.md","ref":"./resource/User_ThirdLogin.md","articles":[]},{"title":"修改头像，登出，停用帐号","level":"1.5.6","depth":2,"path":"resource/User_Loginout.md","ref":"./resource/User_Loginout.md","articles":[]},{"title":"用户数据模型","level":"1.5.7","depth":2,"path":"resource/User_model.md","ref":"./resource/User_model.md","articles":[]}]},"previous":{"title":"集成准备","level":"1.3","depth":1,"path":"resource/Preparation.md","ref":"./resource/Preparation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"resource/Integrated.md","mtime":"2018-12-21T02:49:00.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T02:19:39.061Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"集成SDK","level":"1.4","depth":1,"next":{"title":"用户管理","level":"1.5","depth":1,"path":"resource/User.md","ref":"./resource/User.md","articles":[{"title":"1系列SDK账户迁移","level":"1.5.1","depth":2,"path":"resource/User_sdk_update.md","ref":"./resource/User_sdk_update.md","articles":[]},{"title":"手机帐号","level":"1.5.2","depth":2,"path":"resource/User_mobile.md","ref":"./resource/User_mobile.md","articles":[]},{"title":"邮箱帐号","level":"1.5.3","depth":2,"path":"resource/User_email.md","ref":"./resource/User_email.md","articles":[]},{"title":"用户uid登陆体系","level":"1.5.4","depth":2,"path":"resource/User_uid.md","ref":"./resource/User_uid.md","articles":[]},{"title":"第三方登录","level":"1.5.5","depth":2,"path":"resource/User_ThirdLogin.md","ref":"./resource/User_ThirdLogin.md","articles":[]},{"title":"修改头像，登出，停用帐号","level":"1.5.6","depth":2,"path":"resource/User_Loginout.md","ref":"./resource/User_Loginout.md","articles":[]},{"title":"用户数据模型","level":"1.5.7","depth":2,"path":"resource/User_model.md","ref":"./resource/User_model.md","articles":[]}]},"previous":{"title":"集成准备","level":"1.3","depth":1,"path":"resource/Preparation.md","ref":"./resource/Preparation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"resource/Integrated.md","mtime":"2018-12-28T09:51:42.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-28T09:50:11.021Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

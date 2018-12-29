@@ -1,6 +1,7 @@
 ### 家庭成员管理类
 ### 调用API
-#### `import TuyaHomeMemberApi from './api/TuyaHomeMemberApi'`
+
+####  `import {TuyaHomeMemberApi} from 'tuyasmart-home-sdk'`
 
 TuyaHomeMemberApi提供了家庭成员管理接口，包括添加、删除成员，更新成员的控制权限、获取家庭成员列表等.调用方式:`TuyaHomeMemberApi`(目前如果调用添加成员，此方法传参可传0，将在下个版本优化初始化和调用逻辑).家庭成员管理逻辑主要提供MemberBean用于获取成员信息的接口
 ```javascript 数据类型
