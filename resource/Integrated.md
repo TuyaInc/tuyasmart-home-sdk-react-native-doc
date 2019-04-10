@@ -82,6 +82,52 @@ android:value="应用密钥AppSecret" />
 -dontwarn com.tuya.**
 ```
 
+## iOS 篇介绍
+
+### 一、 cocoapods安装相关依赖:
+``` ruby
+ platform :ios, '8.0'
+ target 'Your_Project_Name' do
+    pod "TuyaSmartHomeKit"
+    pod 'React', :path => 'path/to/node_modules/react-native/', :subspecs => [
+        'Core',
+        'CxxBridge',
+        'ART',
+        'RCTActionSheet',
+        'RCTAnimation',
+        'RCTGeolocation',
+        'RCTImage',
+        'RCTNetwork',
+        'RCTPushNotification',
+        'RCTSettings',
+        'RCTText',
+        'RCTImage',
+        'RCTVibration',
+        'RCTWebSocket',
+        'RCTLinkingIOS',
+        'DevSupport'
+    ]
+    
+    pod 'yoga', :path => 'path/to/node_modules/react-native/ReactCommon/yoga'
+    pod 'RNSVG', :path => 'path/to/node_modules/react-native-svg'
+    pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+    pod 'glog', :podspec => 'path/to/node_modules/react-native/third-party-podspecs/glog.podspec'
+    pod 'Folly', :podspec => 'path/to/node_modules/react-native/third-party-podspecs/Folly.podspec'
+    end
+```
+### 二、把 [TuyaRNSDK](https://github.com/TuyaInc/tuyasmart-home-sdk-react-native/tree/master/Example/ios/TuyaRnDemo/TuyaRNSDK) 中的文件拖到你的工程中.
+### 三、 把安全图片放入工程根目录，并在 AppDelegate.m 文件中配置key和secret (参考 [SDK doc](https://tuyainc.github.io/tuyasmart_home_ios_sdk_doc/zh-hans/resource/Preparation.html)):
+
+``` objective-c
+  [[TuyaSmartSDK sharedInstance] startWithAppKey:@"" secretKey:@""];
+```
+
+
+
+
+
+
+
 ## 在代码中使用SDK功能
 
 TuyaHomeSdk 是一切全屋智能API对外的接口，包含：配网、初始化、控制、房间、群组、ZigBee等一系列的操作。
